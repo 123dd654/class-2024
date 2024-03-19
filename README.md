@@ -1,8 +1,8 @@
 # 오늘의 수업
 
-자기소개 숙제
-9시반   
-정보처리/웹디자인기능사   
+[메인페이지](https://123dd654.github.io/class2024/)     
+
+[자바스크립트](https://123dd654.github.io/class2024/javascript/index.html)      
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
