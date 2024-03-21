@@ -1,8 +1,10 @@
 # 오늘의 수업
 
 [메인페이지](https://123dd654.github.io/class2024/)     
-
-[자바스크립트](https://123dd654.github.io/class2024/javascript/index.html)      
+   
+[자바스크립트](https://123dd654.github.io/class2024/javascript/index.html)   
+   
+[MySQL](https://123dd654.github.io/class2024/mysql/mysql01.html)         
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
