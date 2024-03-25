@@ -7,9 +7,9 @@
 [MySQL](https://123dd654.github.io/class2024/mysql/mysql01.html)     
 
 ## 퀴즈 게임
-[퀴즈게임] (https://123dd654.github.io/class2024/quiz/index.html)   
+[퀴즈게임](https://123dd654.github.io/class2024/quiz/index.html)   
 
-[퀴즈01] (https://123dd654.github.io/class2024/quiz/quiz01.html)   
+[퀴즈01](https://123dd654.github.io/class2024/quiz/quiz01.html)   
 -변수   
 -선택자(querySelector)   
 -메서드(innerText(), classList, addEventListener, if문)   
