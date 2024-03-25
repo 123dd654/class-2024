@@ -4,7 +4,15 @@
    
 [자바스크립트](https://123dd654.github.io/class2024/javascript/index.html)   
    
-[MySQL](https://123dd654.github.io/class2024/mysql/mysql01.html)         
+[MySQL](https://123dd654.github.io/class2024/mysql/mysql01.html)     
+
+## 퀴즈 게임
+[퀴즈게임] (https://123dd654.github.io/class2024/quiz/index.html)   
+
+[퀴즈01] (https://123dd654.github.io/class2024/quiz/quiz01.html)   
+-변수   
+-선택자(querySelector)   
+-메서드(innerText(), classList, addEventListener, if문)   
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
@@ -30,3 +38,9 @@ ES7 : 자바스크립트 및 리액트 문법 정리
 
 ## 색상 관련된 사이트
 [브랜드 색상 제너레이션] (https://huemint.com/brand-intersection/)
+
+
+# 수업내용
+함수는 실행해주는것
+함수의 이름을 넣어야 실행이 됨
+실행문 함수를 화살표 함수로 바꿀수 있음
