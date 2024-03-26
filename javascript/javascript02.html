@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 불러오기</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">javascript</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li class="active"><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__menu container">
+            <ul>
+                <li><a href="#">01. 변수 : 데이터 불러오기</a></li>
+
+                <li><a href="#">02. 상수 : 데이터 불러오기</a></li>
+
+                <li><a href="#">03. 배열 : 데이터 불러오기</a></li>
+                <li><a href="#">04. 배열 : 데이터 불러오기 : 갯수</a></li>
+                <li><a href="#">05. 배열 : 데이터 불러오기 : for()문</a></li>
+                <li><a href="#">06. 배열 : 데이터 불러오기 : forEach()문</a></li>
+                <li><a href="#">07. 배열 : 데이터 불러오기 : for of</a></li>
+                <li><a href="#">08. 배열 : 데이터 불러오기 : for in</a></li>
+                <li><a href="#">09. 배열 : 데이터 불러오기 : map()</a></li>
+                <li><a href="#">10. 배열 : 데이터 불러오기 : filter()</a></li>
+                <li><a href="#">11. 배열 : 데이터 불러오기 : 배열 펼침연산자</a></li>
+                <li><a href="#">12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당</a></li>
+
+                <li><a href="#">13. 객체 : 데이터 불러오기 : 기본</a></li>
+                <li><a href="#">14. 객체 : 데이터 불러오기 : object.keys()</a></li>
+                <li><a href="#">15. 객체 : 데이터 불러오기 : object.values()</a></li>
+                <li><a href="#">16. 객체 : 데이터 불러오기 : object.entries()</a></li>
+                <li><a href="#">17. 객체 : 데이터 불러오기 : object.assign()</a></li>
+                <li><a href="#">18. 객체 : 데이터 불러오기 : object.assign()</a></li>
+                <li><a href="#">19. 객체 : 데이터 불러오기 : hasOwnproperty()</a></li>
+                <li><a href="#">20. 객체 : 데이터 불러오기 : for in</a></li>
+                <li><a href="#">21. 객체 : 데이터 불러오기 : 객체 펼침연산자</a></li>
+                <li><a href="#">22. 객체 : 데이터 불러오기 : 객체 구조 분해 할당</a></li>
+                <li><a href="#">23. 객체 : 데이터 불러오기 : XMLHttRequest</a></li>
+                <li><a href="#">24. 객체 : 데이터 불러오기 : fetch API</a></li>
+            </ul>
+        </div>
+        <!-- //main__menu -->
+
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>01. 변수 : 데이터 불러오기</h3>
+                <p>
+                    변수 데이터를 불러오는 것은 프로그램에서 변수에 할당된 값을 가져오는 것을 의미합니다.<br />
+                    이는 변수에 저장된 정보를 사용하여 다른 작업을 수행하는 데 사용됩니다.<br />
+                    변수 데이터를 불러오는 방법은 프로그래밍 언어에 따라 다를 수 있지만, 일반적으로 변수 이름을 사용하여 해당 변수에 저장된 값을 가져옵니다.
+                </p>
+                <pre><code>{
+    let x = 100, y = 200, z = "javascript"
+
+    console.log("01. 변수 : 데이터 불러오기");
+    console.log(x, y, z);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            01. 변수 : 데이터 불러오기<br />
+                            100<br />
+                            200<br />
+                            javascript<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample01 -->
+
+            <div id="sample02" class="sample">
+                <h3>02. 상수 : 데이터 불러오기</h3>
+                <p>
+                    상수 데이터를 불러오는 것은 프로그램에서 상수에 할당된 값을 가져오는 것을 의미합니다.<br />
+                    상수는 한 번 할당되면 그 값을 변경할 수 없는 변수를 말합니다.<br />
+                    따라서 상수는 일반적으로 프로그램에서 변경되지 않는 값을 저장하는 데 사용됩니다.<br />
+                    <br />
+                    대부분의 프로그래밍 언어에서 상수는 선언할 때 값을 할당하고, 그 이후에는 변경할 수 없습니다.<br />
+                    상수 데이터를 불러오는 방법은 변수 데이터를 불러오는 방법과 유사하며, 상수 이름을
+                    사용하여 해당 상수에 할당된 값을 가져옵니다.
+                </p>
+                <pre><code>{
+    const x = 100, y = 200, z = "javascript"
+
+    console.log("02. 상수 : 데이터 불러오기");
+    console.log(x, y, z);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            02. 상수 : 데이터 불러오기<br />
+                            100<br />
+                            200<br />
+                            javascript<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample02 -->
+
+            <div id="sample03" class="sample">
+                <h3>03. 배열 : 데이터 불러오기</h3>
+                <p>
+                    배열 데이터를 불러오는 것은 프로그램에서 배열에 저장된 값을 가져오는 것을 의미합니다.<br />
+                    배열은 여러 개의 값들을 하나의 변수에 저장하는 자료 구조입니다.<br />
+                    각 값은 배열 내에서 위치에 따라 인덱스로 식별됩니다.
+                </p>
+                <pre><code> {
+    const arr = [100, 200, "javascript"]
+
+    console.log("03. 배열 : 데이터 불러오기");
+    console.log(arr[0], arr[1], arr[2]);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            03. 배열 : 데이터 불러오기<br />
+                            100<br />
+                            200<br />
+                            javascript<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample03 -->
+
+            <div id="sample04" class="sample">
+                <h3>04. 배열 : 데이터 불러오기 : 갯수</h3>
+                <p>
+                    배열의 length 속성은 해당 배열에 포함된 요소의 수를 나타냅니다.<br />
+                    이 속성을 사용하여 배열 데이터를 불러오는 것은 배열의 길이를 기준으로 배열 요소에 접근하는 것을 의미합니다.<br />
+                    JavaScript에서는 배열의 각 요소에는 인덱스가 부여되어 있으며,<br />
+                    length 속성을 사용하여 배열의 길이를 가져온 다음 이를 인덱스 값과 함께 사용하여 배열
+                    데이터를 불러올 수 있습니다.
+                </p>
+                <pre><code> {
+    const arr = [100, 200, "javascript"]
+
+    console.log("04. 배열 : 데이터 불러오기");
+    console.log(arr.length);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            04. 배열 : 데이터 불러오기<br />
+                            3<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample04 -->
+
+            <div id="sample05" class="sample">
+                <h3>05. 배열 : 데이터 불러오기 : for()문</h3>
+                <p>
+                    for()문을 사용하여 배열 데이터를 불러오는 것은 배열의 각 요소에 접근하고 이를 처리하는 반복 작업을 수행하는 방법입니다.<br />
+                    이는 배열의 길이를 이용하여 반복문을 설정하고, 각 인덱스에 해당하는 배열 요소를 차례대로 가져오는 것을 의미합니다.
+                </p>
+                <pre><code> {
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log("05. 배열 : 데이터 불러오기 : for ()문");
+
+    for (let i = 0; i < arr.length; i++) {   //초깃값; 조건식; 증감값;
+        console.log(arr[i]);
+    }
+}</code></pre>
+                <p>
+                    일반적으로 for()문을 사용하여 배열 데이터를 불러오는 과정은 다음과 같습니다.<br />
+                    <br />
+                    배열의 길이를 가져옵니다.<br />
+                    1. for()문을 사용하여 반복 작업을 설정합니다. 이때 반복 횟수는 배열의 길이와 동일하게 설정합니다.
+                    2. 각 반복에서 배열의 인덱스를 이용하여 해당 인덱스에 위치한 배열 요소를 가져옵니다.
+                    3. 가져온 배열 요소를 사용하여 원하는 작업을 수행합니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            05. 배열 : 데이터 불러오기 : for ()문<br />
+                            100<br />
+                            200<br />
+                            300<br />
+                            400<br />
+                            500<br />
+                            600<br />
+                            700<br />
+                            800<br />
+                            900<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample05 -->
+
+            <div id="sample06" class="sample">
+                <h3>06. 배열 : 데이터 불러오기 : forEach()문</h3>
+                <p>
+                    forEach() 메서드는 배열의 각 요소에 대해 지정된 함수를 실행하는 배열 메서드입니다.<br />
+                    이 메서드를 사용하면 for()문보다 간결하고 가독성이 높은 코드를 작성할 수 있습니다.<br />
+                    <br />
+                    forEach() 메서드는 배열의 각 요소를 순회하며 지정된 콜백 함수를 실행합니다.<br />
+                    이 콜백 함수에는 현재 요소, 현재 인덱스, 배열 전체가 매개변수로 전달됩니다.<br />
+                    콜백 함수는 배열의 각 요소에 대해 실행되며, 사용자가 정의한 작업을 수행할 수 있습니다.
+                </p>
+                <pre><code> {
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log("06. 배열 : 데이터 불러오기 : forEach()문");
+    // 01
+    arr.forEach(function (element) {
+        console.log(element);
+    });
+    // 02
+    arr.forEach(function (element, index) {
+        console.log(index);
+    });
+    // 03
+    arr.forEach(function (element, index, array) {
+        console.log(array);
+    });
+
+    //<화살표 함수로 변경(평소 더 많이씀)>
+    // 01
+    arr.forEach((e) => {
+        console.log(e);
+    });
+    // 02
+    arr.forEach(e => {
+        console.log(e);
+    });
+    // 03
+    arr.forEach(e => console.log(e));
+}</code></pre>
+                <p>
+                    forEach() 메서드의 콜백 함수에 전달되는 세 가지 매개변수(element, index, array)에 대해 설명해 드리겠습니다.<br />
+                    <br />
+                    * element: 이 매개변수는 현재 배열 요소의 값을 나타냅니다. forEach() 메서드는 배열의 각 요소를 순회하면서 콜백 함수를 호출하고,<br />
+                    각 요소의 값이 이 매개변수로 전달됩니다. 따라서 콜백 함수 내에서 이 매개변수를 사용하여 배열 요소의 값을 참조할 수 있습니다.<br />
+                    <br />
+                    * index: 이 매개변수는 현재 배열 요소의 인덱스를 나타냅니다. forEach() 메서드는 배열의 각 요소를 순회하면서 콜백 함수를 호출하고,<br />
+                    각 요소의 인덱스가 이 매개변수로 전달됩니다. 이를 통해 콜백 함수 내에서 현재 배열 요소의 인덱스를 활용할 수 있습니다.<br />
+                    <br />
+                    * array: 이 매개변수는 원본 배열 자체를 나타냅니다. forEach() 메서드는 콜백 함수에 현재 배열 요소뿐만 아니라 원본 배열 자체도 전달합니다.<br />
+                    이를 통해 콜백 함수 내에서 원본 배열에 대한 작업을 수행할 수 있습니다. 주로 드문 경우에만 사용되며, 대부분의 경우에는 사용하지 않습니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            06. 배열 : 데이터 불러오기 : forEach()문<br />
+                            1번 : 100~900<br />
+                            2번 : 0~8<br />
+                            3번 : 100~900<br />
+                            <br />
+                            *화살표 함수 사용시<br />
+                            1번 : 100~900<br />
+                            2번 : 100~900<br />
+                            3번 : 100~900<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample06 -->
+
+            <div id="sample07" class="sample">
+                <h3>07. 배열 : 데이터 불러오기 : for of</h3>
+                <p>
+                    for...of 문은 ES6(ECMAScript 2015)에서 도입된 새로운 루프 구문입니다.
+                    이를 사용하면 배열, 문자열, Map, Set 등과 같은 iterable한 객체를 순회하면서 요소를 처리할 수 있습니다.
+
+                    for...of 문은 반복 가능한(iterable) 객체에서 각 요소를 차례로 가져와서 지정된 변수에 할당한 후 루프 본문을 실행합니다.
+                    이것은 일반적으로 배열 데이터를 순회하고 각 요소를 처리하는 데 사용됩니다.
+                </p>
+                <pre><code> {
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log("07. 배열 : 데이터 불러오기 : for of");
+
+    for (let element of arr) {
+        console.log(element);
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            07. 배열 : 데이터 불러오기 : for of<br />
+                            100<br />
+                            200<br />
+                            300<br />
+                            400<br />
+                            500<br />
+                            600<br />
+                            700<br />
+                            800<br />
+                            900<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample07 -->
+
+            <div id="sample08" class="sample">
+                <h3>08. 배열 : 데이터 불러오기 : for in</h3>
+                <p>
+                    for...in 문은 JavaScript에서 객체의 열거 가능한 속성을 순회하는 데 사용됩니다.<br />
+                    그러나 배열의 요소를 순회하는 데에는 for...in문을 사용하는 것이 좋지않습니다.<br />
+                    이유는 배열의 프로퍼티 중에서 숫자형 키가 아닌 다른 프로퍼티도 열거되기 때문입니다.<br />
+                    <br />
+                    배열은 사실 객체이기 때문에 배열의 요소뿐만 아니라 배열에 추가된 사용자 정의 프로퍼티나 프로토타입 체인 상에서 상속받은 프로퍼티들도 열거될 수 있습니다.<br />
+                    그렇기 때문에 for...in을 사용하여 배열을 순회하면 배열의 요소 뿐만 아니라 다른 프로퍼티도 함께 열거될 수 있어서 원하지 않는 결과를 얻을 수 있습니다.
+                </p>
+                <pre><code>{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log("08. 배열 : 데이터 불러오기 : for in");
+
+    for (let element in arr) {
+        console.log(element);            //기존방식 (0,1,2...)
+    }
+
+    for (let element in arr) {
+        console.log(arr[element]);      //이런식으로도 쓸수있음 (100,200,300...)
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            08. 배열 : 데이터 불러오기 : for in<br />
+                            0<br />
+                            1<br />
+                            2<br />
+                            3<br />
+                            4<br />
+                            5<br />
+                            6<br />
+                            7<br />
+                            8<br />
+                            100<br />
+                            200<br />
+                            300<br />
+                            400<br />
+                            500<br />
+                            600<br />
+                            700<br />
+                            800<br />
+                            900<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample08 -->
+
+            <div id="sample09" class="sample">
+                <h3>09. 배열 : 데이터 불러오기 : map()</h3>
+                <p>
+                    for...in 문은 JavaScript에서 객체의 열거 가능한 속성을 순회하는 데 사용됩니다.<br />
+                    그러나 배열의 요소를 순회하는 데에는 for...in문을 사용하는 것이 좋지않습니다.<br />
+                    이유는 배열의 프로퍼티 중에서 숫자형 키가 아닌 다른 프로퍼티도 열거되기 때문입니다.<br />
+                    <br />
+                    배열은 사실 객체이기 때문에 배열의 요소뿐만 아니라 배열에 추가된 사용자 정의 프로퍼티나 프로토타입 체인 상에서 상속받은 프로퍼티들도 열거될 수 있습니다.<br />
+                    그렇기 때문에 for...in을 사용하여 배열을 순회하면 배열의 요소 뿐만 아니라 다른 프로퍼티도 함께 열거될 수 있어서 원하지 않는 결과를 얻을 수 있습니다.
+                </p>
+                <pre><code>{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log("09. 배열 : 데이터 불러오기 : map()");  
+
+    arr.map(function (element) {
+        console.log(element);           //[100~900]
+    });
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            09. 배열 : 데이터 불러오기 : map()<br />
+                            100<br />
+                            200<br />
+                            300<br />
+                            400<br />
+                            500<br />
+                            600<br />
+                            700<br />
+                            800<br />
+                            900<br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample09 -->
+        </div>
+        <!-- //main__sample container-->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer"></footer>
+    <!-- //footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        // 01.변수 : 데이터 불러오기
+        {
+            let x = 100, y = 200, z = "javascript"
+
+            console.log("01. 변수 : 데이터 불러오기");
+            console.log(x, y, z);
+        }
+        // 02.상수 : 데이터 불러오기
+        {
+            const x = 100, y = 200, z = "javascript"
+
+            console.log("02. 상수 : 데이터 불러오기");
+            console.log(x, y, z);
+        }
+        // 03.배열 : 데이터 불러오기
+        {
+            const arr = [100, 200, "javascript"]
+
+            console.log("03. 배열 : 데이터 불러오기");
+            console.log(arr[0], arr[1], arr[2]);
+        }
+        // 04.배열 : 데이터 불러오기: 갯수
+        {
+            const arr = [100, 200, "javascript"]
+
+            console.log("04. 배열 : 데이터 불러오기");
+            console.log(arr.length);
+        }
+        // 05.배열 : 데이터 불러오기: for ()문
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("05. 배열 : 데이터 불러오기 : for ()문");
+            // console.log(arr[0]);
+            // console.log(arr[1]);
+            // console.log(arr[2]);
+            // console.log(arr[3]);
+            // console.log(arr[4]);
+            // console.log(arr[5]);
+            // console.log(arr[6]);
+            // console.log(arr[7]);
+            // console.log(arr[8]);
+
+            for (let i = 0; i < arr.length; i++) {   //초깃값; 조건식; 증감값;
+                console.log(arr[i]);
+            }
+        }
+        // 06.배열 : 데이터 불러오기: forEach()문
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("06. 배열 : 데이터 불러오기 : forEach()문");
+
+            // 01
+            arr.forEach(function (element) {
+                console.log(element);
+            });
+            // 02
+            arr.forEach(function (element, index) {
+                console.log(index);
+            });
+            // 03
+            arr.forEach(function (element, index, array) {
+                console.log(array);
+            });
+
+            //<화살표 함수로 변경(평소 더 많이씀)>
+            // 01
+            arr.forEach((e) => {
+                console.log(e);
+            });
+            // 02
+            arr.forEach(e => {
+                console.log(e);
+            });
+            // 03
+            arr.forEach(e => console.log(e));
+
+        }
+        // 07.배열 : 데이터 불러오기: for of
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("07. 배열 : 데이터 불러오기 : for of");
+
+            for (let element of arr) {
+                console.log(element);
+            }
+        }
+        // 08. 배열 : 데이터 불러오기: for in
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("08. 배열 : 데이터 불러오기 : for in");
+
+            for (let element in arr) {
+                console.log(element);            //기존방식 (0,1,2...)
+            }
+
+            for (let element in arr) {
+                console.log(arr[element]);      //이런식으로도 쓸수있음 (100,200,300...)
+            }
+        }
+        // 09. 배열: 데이터 불러오기: map()
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("09. 배열 : 데이터 불러오기 : map()");    //-> map과 forEach문의 차이점은 결과값에 []의 유무이다.
+
+            //01.
+            arr.map(function (element) {
+                console.log(element);           //[100~900]
+            });
+
+            //02.
+            arr.map(function (element, index) {
+                console.log(index);
+            });
+
+            //03.
+            arr.map(function (element, index, array) {
+                console.log(array);
+            });
+
+        }
+        // 10. 배열: 데이터 불러오기: filter()
+        // 11. 배열: 데이터 불러오기: 배열 펼침연산자
+        // 12. 배열: 데이터 불러오기: 배열 구조 분해 할당
+        // 13. 객체: 데이터 불러오기: 기본
+        // 14. 객체: 데이터 불러오기: object.keys()
+        // 15. 객체: 데이터 불러오기: object.values()
+        // 16. 객체: 데이터 불러오기: object.entries()
+        // 17. 객체: 데이터 불러오기: object.assign()
+        // 18. 객체: 데이터 불러오기: object.assign()
+        // 19. 객체: 데이터 불러오기: hasOwnproperty()
+        // 20. 객체: 데이터 불러오기: for in
+        // 21. 객체: 데이터 불러오기: 객체 펼침연산자
+        // 22. 객체: 데이터 불러오기: 객체 구조 분해 할당
+        // 23. 객체: 데이터 불러오기: XMLHttRequest
+        // 24. 객체: 데이터 불러오기: fetch API
+    </script>
+
+</body>
+
+</html>
