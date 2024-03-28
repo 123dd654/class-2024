@@ -201,10 +201,67 @@ body::after {
     line-height: 1.4;
 }
 
+.quiz__main .choices {
+    margin-bottom: 20px;
+}
+
+.quiz__main .choices label {
+    display: block;
+    width: 100%;
+}
+
+.quiz__main .choices label input {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.quiz__main .choices label span {
+    border: 1px solid #eee;
+    padding: 17px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.quiz__main .choices label span:hover {
+    border-color: #007bff;
+    color: #007bff;
+    box-shadow: 1px 1px 5px #007bff;
+}
+
+.quiz__main .choices label span::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 4px #83bfff;
+    margin-right: 13px;
+    transition: all 0.3s;
+}
+
+.quiz__main .choices label input:checked+span::before {
+    box-shadow: inset 0 0 0 9px #83bfff;
+    ;
+}
+
+.quiz__main .choices label input:checked+span {
+    border-color: #007bff;
+    color: #007bff;
+    box-shadow: 1px 1px 5px #83bfff;
+    background-color: #fff;
+}
+
 .quiz__main .input input {
     width: 100%;
     padding: 20px;
-    border: 1px solid #fff200;
+    border: 1px solid #007bff;
     border-radius: 3px;
     font-size: 16px;
     color: #666;
@@ -213,9 +270,9 @@ body::after {
 }
 
 .quiz__main .answer {
-    border: 1px solid #fff200;
+    border: 1px solid #007bff;
     padding: 20px;
-    background-color: #fffa9e;
+    background-color: #a1ceff;
     border-radius: 3px;
     font-size: 16px;
     color: #666;
@@ -224,11 +281,11 @@ body::after {
 }
 
 .quiz__main .answer::before {
-    content: '👌 정답 : ';
+    content: '✤ 정답 : ';
 }
 
 .quiz__main .desc {
-    border: 1px solid #fff200;
+    border: 1px solid #007bff;
     padding: 20px;
     border-radius: 3px;
     font-size: 16px;
@@ -238,13 +295,13 @@ body::after {
 }
 
 .quiz__main .desc::before {
-    content: '🫠 설명 : ';
+    content: '✤ 설명 : ';
 }
 
 .quiz__footer {}
 
 .quiz__footer .confirm {
-    background-color: #fff200;
+    background-color: #007bff;
     color: #000000;
     width: 100%;
     padding: 20px;
@@ -257,8 +314,7 @@ body::after {
 
 .quiz__footer .confirm:hover {
     background-color: transparent;
-    border: 1px dashed #fff200;
-    color: #fff200;
-    ;
+    border: 1px dashed #007bff;
+    color: #007bff;
     cursor: pointer;
 }

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #ddd;
+        }
+
+        #header .header-container {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #header .header-container .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #fd6f6f;
+        }
+
+        #header .header-container .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #f85b5b;
+        }
+
+        #slider {
+            width: 100%;
+        }
+
+        #slider .slider-container {
+            width: 1200px;
+            height: 300px;
+            background-color: #cc5b5b;
+            margin: 0 auto;
+        }
+
+        #contents {
+            width: 100%;
+        }
+
+        #contents .contents-container {
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        #contents .content1 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #a74b4b;
+        }
+
+        #contents .content2 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #a63c3c;
+        }
+
+        #contents .content3 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #a72d2d;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #ddd;
+        }
+
+        #footer .footer-container {
+            width: 1200px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        #footer .footer-container .footer1 {
+            width: 200px;
+            height: 100px;
+            background-color: #813939;
+        }
+
+        #footer .footer-container .footer2 {
+            width: 1000px;
+            height: 100px;
+            background-color: #612a2a;
+        }
+
+        #footer .footer-container .footer2 .footer2-1 {
+            width: 100%;
+            height: 50px;
+            background-color: #612a2a;
+        }
+
+        #footer .footer-container .footer2 .footer2-2 {
+            width: 100%;
+            height: 50px;
+            background-color: #471e1e;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header-container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <article id="slider">
+            <div class="slider-container"></div>
+        </article>
+        <!-- //slider -->
+
+        <main id="contents">
+            <div class="contents-container">
+                <section class="content1"></section>
+                <section class="content2"></section>
+                <section class="content3"></section>
+            </div>
+        </main>
+        <!-- //contents -->
+
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+</body>
+
+</html>

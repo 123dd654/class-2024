@@ -9,123 +9,107 @@
 
 <body>
     <script>
-        //01. 선언적 함수
+        //01. 선언적 함수(화실표)
         {
-            function test() {
+            test = () => {
                 console.log("01")
             }
             test();
         }
-        //02 익명함수
+        //02. 익명함수(화실표)
         {
-            const test = function () {
+            const test = () => {
                 console.log("02")
             }
             test();
         }
-        //03. 매개변수 함수
+        //03. 매개변수 함수(화실표)
         {
-            function test(string) {
-                console.log(string)
+            test = (str) => {
+                console.log(str)
             }
             test("03");
         }
-        //04. 리턴값 함수
+        //04. 리턴값 함수(화실표)
         {
-            function test() {
+            test = () => {
                 return "04"
             }
             console.log(test());
         }
-        //05. 매개 + 리턴
+        //05. 매개변수 + 리턴값 함수(화실표)
         {
-            function test(string) {
-                return string
+            test = (str) => {
+                return str;
             }
             console.log(test("05"));
         }
-        //06. (화살표)선언적 함수
+        //06. for문(1~20)
         {
-            test = () => {
-                console.log("06")
-            }
-            test();
-        }
-        //07. (화살표)익명함수
-        {
-            const test = () => {
-                console.log("07")
-            }
-            test();
-        }
-        //08 (화살표)매개변수 함수
-        {
-            test = (string) => {
-                console.log(string)
-            }
-            test("08");
-        }
-        //09. (화살표)리턴값 함수
-        {
-            test = () => {
-                return "09"
-            }
-            console.log(test());
-        }
-        //10. (화살표)매개 + 리턴
-        {
-            test = (string) => {
-                return string
-            }
-            console.log(test("10"));
-        }
-        //11. for문
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-            console.log("11.")
-            for (let i = 0; i < arr.length; i++) {
-                console.log(arr[i])
+            console.log("06")
+            for (let i = 0; i < num.length; i++) {
+                console.log(num[i])
             }
         }
-        //12. forEach
+        //07. for문
         {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
 
-            console.log("12.")
-            arr.forEach(function (ele) {
-                console.log(ele)
+            console.log("07")
+            for (let i = 0; i < num.length; i++) {
+                console.log(num[i])
+            }
+        }
+        //08. forEach()
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+
+            console.log("08")
+            num.forEach(function (ele) {
+                console.log((ele))
             })
         }
-        //13. for of
+
+        //09. for in
         {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
 
-            console.log("13.")
+            console.log("09")
+            for (let ele in num) {
+                console.log(num[ele])
+            }
+        }
+        //10. for of
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
 
-            for (let ele of arr) {
+            console.log("10")
+            for (let ele of num) {
                 console.log(ele)
             }
         }
-        //14. for in
+        //11. map()
         {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
 
-            console.log("14.")
-
-            for (let ele in arr) {
-                console.log(arr[ele])
-            }
-        }
-        //15. map()
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-            console.log("15.")
-            arr.map(function (ele) {
-                console.log(ele)
+            console.log("11")
+            num.map(function (ele) {
+                console.log((ele))
             })
         }
+
+        //12. filter
+        {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8]
+
+            console.log("12")
+            num.filter(function (ele) {
+                console.log((ele))
+            })
+        }
+
     </script>
 </body>
 
