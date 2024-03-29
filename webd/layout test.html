@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험용 레이아웃</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            height: 100px;
+            background-color: #eee;
+        }
+
+        #header .container .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #ffa0a0;
+        }
+
+        #header .container .menu {
+            width: 80%;
+            height: 100px;
+            background-color: #ff8686;
+        }
+
+        #slider {
+            height: 300px;
+        }
+
+        #slider .container .slider1 {
+            width: 50%;
+            height: 300px;
+            background-color: #f96969;
+        }
+
+        #slider .container .slider2 {
+            width: 50%;
+        }
+
+        #slider .container .slider2 .slider2-1 {
+            height: 150px;
+            background-color: #fd4545;
+        }
+
+        #slider .container .slider2 .slider2-2 {
+            height: 150px;
+            background-color: #fd2b2b;
+        }
+
+        #contents {
+            height: 200px;
+            background-color: #a09e9e;
+        }
+
+        #contents .container .content1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #c85d5d;
+        }
+
+        #contents .container .content2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #ca4545;
+        }
+
+        #contents .container .content3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #ca3131;
+        }
+
+        #footer {
+            height: 100px;
+            background-color: #757575;
+        }
+
+        #footer .container .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #925555;
+        }
+
+        #footer .container .footer2 {
+            width: 60%;
+            height: 100px;
+            background-color: #914242;
+        }
+
+        #footer .container .footer3 {
+            width: 20%;
+            height: 100px;
+            background-color: #993434;
+        }
+
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            /* background-color: #ffde97; */
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1 class="logo"></h1>
+                <nav class="menu"></nav>
+            </div>
+        </header>
+        <!-- //container -->
+
+        <article id="slider">
+            <div class="container">
+                <div class="slider1"></div>
+                <div class="slider2">
+                    <div class="slider2-1"></div>
+                    <div class="slider2-2"></div>
+                </div>
+            </div>
+        </article>
+        <!-- //article -->
+
+        <main id="contents">
+            <div class="container">
+                <div class="content1"></div>
+                <div class="content2"></div>
+                <div class="content3"></div>
+            </div>
+        </main>
+        <!-- //contents -->
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer1"></div>
+                <div class="footer2"></div>
+                <div class="footer3"></div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+</body>
+
+</html>
