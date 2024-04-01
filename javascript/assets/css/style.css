@@ -169,7 +169,7 @@ li {
 #header h1 a {
     font-family: var(--fontG);
     font-size: 4vw;
-    color: #ef85ab;
+    color: #8b35b3;
 }
 
 @media (max-width: 800px) {
@@ -190,14 +190,14 @@ li {
 
 #header nav ul li a {
     font-family: var(--fontN);
-    border: 1px solid #ef85ab;
+    border: 1px solid #8b35b3;
     padding: 10px 20px;
     display: inline-block;
-    color: #ef85ab;
+    color: #8b35b3;
 }
 
 #header nav ul li.active a {
-    background-color: #ef85ab;
+    background-color: #8b35b3;
     color: #fff;
 }
 
@@ -208,7 +208,7 @@ li {
 }
 
 .main__menu ul li a {
-    color: #ef85ab;
+    color: #8b35b3;
     line-height: 1.7;
     font-family: var(--fontN);
 }
