@@ -18,9 +18,19 @@
 -배열, 객체
 -선택자(querySelectorAll)
 -반복문(for(),forEach())
--메서드 (innerHTML(), classList.add(), addEventListener(), if문)
+-메서드 (innerHTML(), classList.add, addEventListener, if문)
 
 [퀴즈03](https://123dd654.github.io/class2024/quiz/quiz03.html)
+-변수, 배열, 객체
+-선택자(querySelector(), querySelectorAll())
+-반복문(for(), break문)
+-매서드(innerHTML(), classList.add, addEventListener, if문)
+
+[퀴즈04](https://123dd654.github.io/class2024/quiz/quiz04.html)
+-변수, 배열, 객체, 템플릿 리터럴(문자결합기능)
+-선택자(querySelector(), querySelectorAll())
+-반복문(forEach())
+-매서드(join(), push(), innerHTML())
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   

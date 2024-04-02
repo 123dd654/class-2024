@@ -36,113 +36,113 @@
     </footer>
     <!-- //footer -->
 
-</body>
-<script>
-    //선택자
-    const quizWrap = document.querySelector(".quiz__wrap");
 
-    //문제 정보
-    const quizInfo = [
-        {
-            date: "2021년 1회",
-            type: "정보처리기능사",
-            question: "ASCII 코드에 대한 설명으로 잘못된 것은?",
-            choices: {
-                1: "16비트 코드로 미국 표준협회에서 개발하였다.",
-                2: "3개의 Zone비트를 가지고 있다.",
-                3: "통신 제어용으로 사용한다.",
-                4: "128가지의 문자를 표현한다."
-            },
-            answer: "1",
-            desc: "SCII 코드는 7비트로 구성되어 있어서 총 128가지의 문자를 표현할수 있습니다. <br>대표적인 16비트 코드는 유니코드입니다."
-        }, {
-            date: "2021년 1회",
-            type: "정보처리기능사",
-            question: "명령어 형식(instruction format)에서 첫 번째 바이트에 기억되는 것은?",
-            choices: {
-                1: "opcode",
-                2: "operand",
-                3: "length",
-                4: "question mark"
-            },
-            answer: "1",
-            desc: "명령어의 구성명령어 코드부 + 주소부 (한글),<br> OP-code + Operand (영문)"
-        }, {
-            date: "2021년 1회",
-            type: "정보처리기능사",
-            question: "반가산기(Half-Adder)의 논리회로도에서 자리올림이 발생하는 회로는?",
-            choices: {
-                1: "AND",
-                2: "OR",
-                3: "NOT",
-                4: "ExclusiveOR"
-            },
-            answer: "1",
-            desc: "반가산기 구성: S = A XOR B, C = A AND B, <br>S : SUM(합), C : Carry(자리올림)"
-        }, {
-            date: "2021년 1회",
-            type: "정보처리기능사",
-            question: "3단계 스키마의 종류에 해당하지 않는 것은?",
-            choices: {
-                1: "외부 스키마",
-                2: "관계 스키마",
-                3: "내부 스키마",
-                4: "개념 스키마"
-            },
-            answer: "2",
-            desc: "컴퓨터의 주소를 IP주소라고 하며 .(점)으로 구분하는 방식은 IPv4 방식입니다."
-        }, {
-            date: "2021년 1회",
-            type: "정보처리기능사",
-            question: "스프레드시트 작업에서 반복적으로 실행하는 경우에 한 번의 명령으로 자동화시켜 처리하는 기능은?",
-            choices: {
-                1: "뷰",
-                2: "정렬",
-                3: "필터",
-                4: "매크로"
-            },
-            answer: "4",
-            desc: "Stack이라는 단어를 통하여 묵시적(Implied)임을 알수 있습니다."
-        }, {
-            date: "2021년 1회",
-            type: "정보처리기능사",
-            question: "프리젠테이션에서 프리젠테이션의 흐름을 기획한 것을 무엇이라 하는가?",
-            choices: {
-                1: "슬라이드",
-                2: "개체",
-                3: "시나리오",
-                4: "매크로"
-            },
-            answer: "3",
-            desc: "시나리오 : 흐름을 기획한것."
-        }
-    ]
+    <script>
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
 
-    //문제 출력
-    const updateQuiz = () => {
-        const quizArray = [];
+        //문제 정보
+        const quizInfo = [
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "ASCII 코드에 대한 설명으로 잘못된 것은?",
+                choices: {
+                    1: "16비트 코드로 미국 표준협회에서 개발하였다.",
+                    2: "3개의 Zone비트를 가지고 있다.",
+                    3: "통신 제어용으로 사용한다.",
+                    4: "128가지의 문자를 표현한다."
+                },
+                answer: "1",
+                desc: "SCII 코드는 7비트로 구성되어 있어서 총 128가지의 문자를 표현할수 있습니다. <br>대표적인 16비트 코드는 유니코드입니다."
+            }, {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "명령어 형식(instruction format)에서 첫 번째 바이트에 기억되는 것은?",
+                choices: {
+                    1: "opcode",
+                    2: "operand",
+                    3: "length",
+                    4: "question mark"
+                },
+                answer: "1",
+                desc: "명령어의 구성명령어 코드부 + 주소부 (한글),<br> OP-code + Operand (영문)"
+            }, {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "반가산기(Half-Adder)의 논리회로도에서 자리올림이 발생하는 회로는?",
+                choices: {
+                    1: "AND",
+                    2: "OR",
+                    3: "NOT",
+                    4: "ExclusiveOR"
+                },
+                answer: "1",
+                desc: "반가산기 구성: S = A XOR B, C = A AND B, <br>S : SUM(합), C : Carry(자리올림)"
+            }, {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "3단계 스키마의 종류에 해당하지 않는 것은?",
+                choices: {
+                    1: "외부 스키마",
+                    2: "관계 스키마",
+                    3: "내부 스키마",
+                    4: "개념 스키마"
+                },
+                answer: "2",
+                desc: "컴퓨터의 주소를 IP주소라고 하며 .(점)으로 구분하는 방식은 IPv4 방식입니다."
+            }, {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "스프레드시트 작업에서 반복적으로 실행하는 경우에 한 번의 명령으로 자동화시켜 처리하는 기능은?",
+                choices: {
+                    1: "뷰",
+                    2: "정렬",
+                    3: "필터",
+                    4: "매크로"
+                },
+                answer: "4",
+                desc: "Stack이라는 단어를 통하여 묵시적(Implied)임을 알수 있습니다."
+            }, {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "프리젠테이션에서 프리젠테이션의 흐름을 기획한 것을 무엇이라 하는가?",
+                choices: {
+                    1: "슬라이드",
+                    2: "개체",
+                    3: "시나리오",
+                    4: "매크로"
+                },
+                answer: "3",
+                desc: "시나리오 : 흐름을 기획한것."
+            }
+        ]
 
-        quizInfo.forEach((quiz, index) => {
-            quizArray.push(`
+        //문제 출력
+        const updateQuiz = () => {
+            const quizArray = [];
+
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`
             <div class="quiz">
                 <div class="quiz__header">${quiz.date} ${quiz.type}</div>
                 <div class="quiz__main">
                     <div class="question"> ${index + 1}. ${quiz.question}</div>
                     <div class="choices">
-                        <label for="choice1-${index}">
-                            <input type="radio" id="choice1-${index}" name="choice-${index}" value="1">
+                        <label for="choice${index}-1">
+                            <input type="radio" id="choice${index}-1" name="choice-${index}" value="1">
                             <span> ${quiz.choices[1]}</span>
                         </label>
-                        <label for="choice2-${index}">
-                            <input type="radio" id="choice2-${index}" name="choice-${index}" value="2">
+                        <label for="choice${index}-2">
+                            <input type="radio" id="choice${index}-2" name="choice-${index}" value="2">
                             <span>${quiz.choices[2]}</span>
                         </label>
-                        <label for="choice3-${index}">
-                            <input type="radio" id="choice3-${index}" name="choice-${index}" value="3">
+                        <label for="choice${index}-3">
+                            <input type="radio" id="choice${index}-3" name="choice-${index}" value="3">
                             <span>${quiz.choices[3]}</span>
                         </label>
-                        <label for="choice4-${index}">
-                            <input type="radio" id="choice4-${index}" name="choice-${index}" value="4">
+                        <label for="choice${index}-4">
+                            <input type="radio" id="choice${index}-4" name="choice-${index}" value="4">
                             <span>${quiz.choices[4]}</span>
                         </label>
                     </div>
@@ -154,11 +154,49 @@
                 </div>
             </div>`)
 
-            quizWrap.innerHTML = quizArray.join("")    //박스 사이 쉼표 없애는법
-        });
-        console.log(quizArray);
-    }
-    updateQuiz();
-</script>
+                quizWrap.innerHTML = quizArray.join("")    //박스 사이 쉼표 없애는법
+            });
+        }
+
+        //정답 확인
+        const answerQuiz = (index) => {
+            //사용자가 체크한 정답
+            const quizChecked = quizWrap.querySelectorAll(`.quiz__main .choices input[name="choice-${index}"]:checked`);
+            const quizElement = quizWrap.querySelectorAll(".quiz")[index];
+            const answerElement = quizWrap.querySelectorAll(".answer")[index];
+            const descElement = quizWrap.querySelectorAll(".desc")[index];
+            const confirmElement = quizWrap.querySelectorAll(".confirm")[index];
+
+            if (quizChecked.length > 0) {     //사용자가 체크한것
+                const userAnswer = quizChecked[0].value;
+                if (userAnswer === quizInfo[index].answer) {
+                    quizElement.classList.add("good");       // 0표시
+                } else {
+                    quizElement.classList.add("bad");        // X표시
+                    answerElement.classList.remove("none");  // 정답 보기
+
+                }
+                descElement.classList.remove("none");        //해설 보기
+                confirmElement.style.display = "none";       //정답 버튼 삭제
+            } else {
+                alert("보기를 선택해주세요!!");
+            }
+        }
+
+        //페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            //문제출력
+            updateQuiz();
+
+            //정답확인
+            quizWrap.querySelectorAll(".confirm").forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    answerQuiz(index);
+                })
+            })
+        })
+
+    </script>
+</body>
 
 </html>
