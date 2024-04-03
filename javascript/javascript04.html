@@ -55,16 +55,32 @@
 
         <div class="main__sample container">
             <div id="sample01" class="sample">
-                <h3>01.</h3>
-                <p></p>
-                <pre><code>{}</code></pre>
+                <h3>01. if문</h3>
+                <p>if문은 프로그래밍에서 조건을 검사하고 그에 따라 코드를 실행하는 데 사용되는 제어 구조입니다.<br />
+                    일반적으로 조건이 참(True)일 때 코드 블록이 실행되며, 조건이 거짓(False)이면 실행되지 않습니다.<br />
+                    이는 프로그램이 특정 조건에 따라 다른 동작을 할 수 있도록 하는 데 매우 유용합니다.<br />
+                    조건은 참(True) 또는 거짓(False)이 될 수 있는 표현식이며, 조건을 만족하는 경우에만 코드 블록이 실행됩니다.<br />
+                    코드 블록은 일반적으로 들여쓰기로 구분됩니다.<br />
+                    <br />
+                    if문은 추가적인 옵션으로 else문을 사용하여 조건이 거짓일 때 실행할 코드를 지정할 수 있습니다.
+                </p>
+                <pre><code>{
+    //true, "문자열", 1, 2, "1", "2", [], {}
+    //false, ""(빈문자열), 0, null, undefined
+    
+    console.log("01. if문")
+    if (0) {
+        console.log("실행되었습니다.(true)");
+    } else {
+        console.log("실행되었습니다.(false)");
+    }
+}</code></pre>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            <br />
-                            <br />
-                            <br />
+                            01. if문<br />
+                            false
                         </div>
                     </details>
                 </div>
@@ -83,7 +99,7 @@
     <script>
         // 01. if문 (조건에 따라서 true나 false가 될 수 있음)
         {
-            //true, "문자열", 1, 2, "1", "2", [, {}]
+            //true, "문자열", 1, 2, "1", "2", [], {}
             //false, ""(빈문자열), 0, null, undefined
             console.log("01. if문")
             if (0) {

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 05</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li class="active"><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:rrkd159@naver.com">rrkd159@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script>
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        //문제정보
+        const quizInpo = [
+            {
+                date: "2008년 상시",
+                type: "정보처리기능사",
+                question: "일반적으로 digital type 의 양을 바르게 표현한 것은?",
+                choices: ["시간의 흐름", "온도의 변화", "식물의 성장", "연필의 갯수"],
+                answer: "4",
+                desc: "연필은 1.5개가 존재 하지 않으므로 디지털입니다"
+            }, {
+                date: "2008년 상시",
+                type: "정보처리기능사",
+                question: "16진수 FF를 10진수로 나타내면?",
+                choices: ["255", "254", "256", "257"],
+                answer: "1",
+                desc: "우선 16진수를 4자리씩 확장하여 2진수로 변환한후 10진수로 읽어 주시면 빠르게 읽을수 있습니다."
+            }, {
+                date: "2008년 상시",
+                type: "정보처리기능사",
+                question: "하나의 명령어가 2개의 오퍼랜드를 가지고 있으며, 처리할 데이터를 제 1, 제 2 오퍼랜드에 기억시키고 그 처리결과를 제 1오퍼랜드에 기억시키므로 제 1오퍼랜드로 표시된 장소에 기억되어 있던 내용은 처리후에 지워지게 되는 명령의 형식은?",
+                choices: ["1 어드레스(Address) 방식", "2 어드레스(Address) 방식", "3 어드레스(Address) 방식", "2 메모리(Memory) 방식"],
+                answer: "2",
+                desc: "기억 기능이 없다고 하였으므로 2주소 방식 입니다. 0주소 : 스택(Stack) <br>1주소 : 누산기(ACC)<br>2주소 : 일반적,범용, 기억불능,자료보존 불능<br>3주소 : 특수, 기억가능, 자료보존 가능"
+            }, {
+                date: "2008년 상시",
+                type: "정보처리기능사",
+                question: "불대수(Boolean algebra)의 정리 중 틀린 것은?",
+                choices: ["A+A=A", "A+0=0", "A·A'=0", "A+A'=1"],
+                answer: "2",
+                desc: "A+0=A 입니다."
+            }, {
+                date: "2008년 상시",
+                type: "정보처리기능사",
+                question: "연산에 사용되는 데이터 및 연산의 중간 결과를 레지스터에 저장하는 주된 이유는?",
+                choices: ["비용 절약을 위하여", "기억 장소의 절약을 위하여", "연산 속도의 향상을 위하여", "연산의 정확도를 높이기 위하여"],
+                answer: "4",
+                desc: "누산기(ACC,Accumulator) : 연산결과 일시 저장(연산 속도 향상 목적)"
+            },
+        ]
+
+        //변수
+        let currentIndex = 0; //현재 문제에 대한 값 
+        console.log(currentIndex)
+
+        // 문제 출력 
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+                <div class="quiz">
+                    <div class="quiz__header">${quizInpo[index].date} ${quizInpo[index].type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quizInpo[index].question}</div>
+                        <div class="choices">
+                            <label for="choice1">
+                                <input type="radio" id="choice1" name="choice" value="1">
+                                <span>${quizInpo[index].choices[0]}</span>
+                            </label>
+                            <label for="choice2">
+                                <input type="radio" id="choice2" name="choice" value="2">
+                                <span>${quizInpo[index].choices[1]}</span>
+                            </label>
+                            <label for="choice3">
+                                <input type="radio" id="choice3" name="choice" value="3">
+                                <span>${quizInpo[index].choices[2]}</span>
+                            </label>
+                            <label for="choice4">
+                                <input type="radio" id="choice4" name="choice" value="4">
+                                <span>${quizInpo[index].choices[3]}</span>
+                            </label>
+                        </div>
+                        <div class="answer none">${quizInpo[index].answer}</div>
+                        <div class="desc none">${quizInpo[index].desc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                    </div>
+                </div>
+            `
+            quizWrap.innerHTML = quizWrapTag;
+
+            //선택자
+            const quizConfirm = quizWrap.querySelector(".confirm");
+            const quizNext = quizWrap.querySelector(".next");
+
+
+            //정답 버튼을 클릭하면 alert(currentIndex=0이 나오게)
+            quizConfirm.addEventListener("click", () => {
+                //사용자가 클릭한 정답을 확인
+                const quizChecked = quizWrap.querySelector("input[name='choice']:checked"); //사용자가 클릭한 정답확인
+
+                // if (!quizChecked) {
+                //     //true
+                // } else {
+                //     //false
+                //     alert("답을 선택해주세요.")
+                // }
+
+                if (quizChecked) {        //위에서 아래모양으로 줄일 수 있음
+                    const userAnswer = quizChecked.value;               //사용자가 클릭한 value 값
+                    const quizAnswer = quizInpo[currentIndex].answer    //정답지의 정답
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer")
+                    const descElement = quizWrap.querySelector(".desc");
+
+
+                    //사용자 정답과 정답지 정답을 비교
+                    if (userAnswer === quizAnswer) {
+                        // alert("정답입니다.");
+                        quizElement.classList.add("good");
+                    } else {
+                        // alert("오답입니다.");
+                        quizElement.classList.add("bad");
+                        answerElement.classList.remove("none");
+                    }
+                    descElement.classList.remove("none");
+                    quizConfirm.classList.add("none");
+                    quizNext.classList.remove("none");
+                } else {
+                    alert("답을 선택해주세요.")
+                }
+            })
+
+            //다음 문제 버튼을 클릭하면 alert()
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInpo.length - 1) {
+                    //currentIndex 1을 추가
+                    currentIndex++;                //문제번호 증가
+                    updateQuiz(currentIndex);      //퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.")
+                }
+            })
+        }
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);
+        });
+    </script>
+</body>
+
+</html>
