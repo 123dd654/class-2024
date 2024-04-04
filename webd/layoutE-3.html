@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-3</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #wrap {
+        width: 100%;
+    }
+
+    #main {
+        width: 100%;
+        height: calc(100vh - 120px);
+        background-color: #eee;
+        display: flex;
+    }
+
+    #header {
+        width: 200px;
+    }
+
+    #header .logo {
+        height: 10%;
+        background-color: rgb(255, 253, 195);
+    }
+
+    #header .nav {
+        height: 90%;
+        background-color: #fffd8d;
+    }
+
+    #contents {
+        width: 400px;
+    }
+
+    #contents .notice {
+        height: 40%;
+        background-color: #bbb863;
+    }
+
+    #contents .gallery {
+        height: 40%;
+        background-color: #716f36;
+    }
+
+    #contents .link {
+        height: 20%;
+        background-color: #5a592a;
+    }
+
+    #slider {
+        width: calc(100% - 600px);
+        height: 100%;
+        background-color: #424225;
+    }
+
+    #footer {
+        width: 100%;
+        display: flex;
+    }
+
+    #footer .footer1 {
+        width: 200px;
+        height: 120px;
+        background-color: #2e2e19;
+    }
+
+    #footer .footer2 {
+        width: calc(80% - 200px);
+        height: 120px;
+        background-color: #222213;
+    }
+
+    #footer .footer3 {
+        width: 20%;
+        height: 120px;
+        background-color: #000000;
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div id="main">
+            <header id="header">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </header>
+            <!-- //header -->
+
+            <section id="contents">
+                <article class="notice"></article>
+                <article class="gallery"></article>
+                <article class="link"></article>
+            </section>
+            <!-- //contents -->
+
+            <article id="slider"></article>
+            <!-- //slider -->
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+    </footer>
+    <!-- //footer -->
+</body>
+
+</html>
