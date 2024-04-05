@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //01. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            let x = 100, y = 200, z = "javascript";
+
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+        //02. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500];
+
+            for (let i = 1; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+        }
+        //03. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600];
+
+            arr.forEach(el => console.log(el));
+        }
+        //04. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700];
+
+            for (let element of arr) {
+                console.log(element);
+            }
+        }
+        //05. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800];
+
+            for (let element in arr) {
+                console.log(arr[element]);
+            }
+        }
+        //06. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800];
+
+            for (let element in arr) {
+                console.log(element + " : " + arr[element]);
+            }
+        }
+        //07. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            const arrNum = arr.map((el) => {
+                return el + 50;
+            });
+
+            console.log(arrNum);
+        }
+        //08. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            arr.filter(function (element, index) {
+                console.log(index);
+            });
+        }
+        //09. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            const arrNum = arr.filter((el) => {
+                return el > 500;
+            });
+
+            console.log(arrNum);
+        }
+        //10. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr1 = [100, 200, 300];
+            const arr2 = [400, 500, 600];
+
+            console.log(arr1);
+            console.log(...arr1);
+        }
+        //11. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr1 = [100, 200];
+            const arr2 = [400, 500];
+
+            console.log(...arr1, ...arr2);
+            console.log(...arr1, 600);
+        }
+        //12. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            function addNum(a, b, c) {
+                return a + b + c;
+            }
+            const num = [100, 200, 300];
+            const sum = addNum(...num);
+
+            console.log(sum);
+        }
+        //13. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const [a, b, c] = [100, 200, 300];
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        //14. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const arr = [100, 200, 300];
+            const [x, y, z] = arr;
+
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+        //15. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log(Object.keys(obj));
+            console.log(Object.values(obj));
+            console.log(Object.entries(obj));
+        }
+        //16. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const obj1 = {
+                a: 100,
+                b: 200,
+            };
+            const obj2 = {
+                c: 300,
+                d: 400,
+            };
+            const obj3 = Object.assign(obj1, obj2);
+
+            console.log(obj3);
+        }
+        //17. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log(obj.hasOwnProperty("a"));
+            console.log(obj.hasOwnProperty("b"));
+            console.log(obj.hasOwnProperty("c"));
+            console.log(obj.hasOwnProperty("d"));
+        }
+        //18. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            for (let el in obj) {
+                console.log(el + " : " + obj[el]);
+            }
+        }
+        //19. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript",
+            }
+            const obj2 = {
+                d: 300,
+                e: 400,
+                f: "jquery",
+            }
+            const obj3 = { ...obj1, ...obj2 }
+            const obj4 = { ...obj1, d: "jquery" }
+            const obj5 = { ...obj1, b: 300 }
+
+            console.log(obj3);
+            console.log(obj4);
+            console.log(obj5);
+        }
+        //20. 다음을 보고 결괏값을 작성하시오!
+
+        {
+            const obj2 = {
+                d: 100,
+                e: 200,
+                f: "javascript",
+            }
+
+            const { d, e, f, g = "jquery" } = obj2;
+
+            console.log(g);
+        }
+    </script>
+</body>
+
+</html>
