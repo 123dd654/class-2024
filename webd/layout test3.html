@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #eee;
+            display: flex;
+        }
+
+        #header .header-container {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #header .header-container .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #fff09c;
+        }
+
+        #header .header-container .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #cdc17d;
+        }
+
+        #slider {
+            width: 100%;
+            height: 400px;
+            display: flex;
+        }
+
+        #slider .slider-container {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #fce878;
+        }
+
+        #contents {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            display: flex;
+        }
+
+        #contents .contents-container {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #contents .contents-container .content1 {
+            width: 33.333%;
+            height: 300px;
+            background-color: #ffe659;
+        }
+
+        #contents .contents-container .content2 {
+            width: 33.333%;
+            height: 300px;
+            background-color: #c7b445;
+        }
+
+        #contents .contents-container .content3 {
+            width: 33.333%;
+            height: 300px;
+            background-color: #8f8131;
+        }
+
+        #notice {
+            width: 100%;
+            height: 300px;
+            display: flex;
+        }
+
+        #notice .notice-container {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #notice .notice-container .notice1 {
+            width: 33.333%;
+            height: 300px;
+            background-color: #81794d;
+        }
+
+        #notice .notice-container .notice2 {
+            width: calc(100% - 33.333%);
+            height: 300px;
+        }
+
+        #notice .notice-container .notice2 .notice2-1 {
+            width: 100%;
+            height: 150px;
+            background-color: #74671c;
+        }
+
+        #notice .notice-container .notice2 .notice2-2 {
+            width: 100%;
+            height: 150px;
+            background-color: #a1902b;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #eee;
+            display: flex;
+        }
+
+        #footer .footer-container {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #footer .footer-container .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #dbd58f;
+        }
+
+        #footer .footer-container .footer2 {
+            width: 80%;
+            height: 100px;
+        }
+
+        #footer .footer-container .footer2 .footer2-1 {
+            width: 100%;
+            height: 50px;
+            background-color: #9e9a67;
+        }
+
+        #footer .footer-container .footer2 .footer2-2 {
+            width: 100%;
+            height: 50px;
+            background-color: #6c6a46;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header-container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+        <article id="slider">
+            <div class="slider-container"></div>
+        </article>
+        <main id="contents">
+            <div class="contents-container">
+                <div class="content1"></div>
+                <div class="content2"></div>
+                <div class="content3"></div>
+            </div>
+        </main>
+        <section id="notice">
+            <div class="notice-container">
+                <div class="notice1"></div>
+                <div class="notice2">
+                    <div class="notice2-1"></div>
+                    <div class="notice2-2"></div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
