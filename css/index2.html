@@ -16,14 +16,14 @@
             /* 화면을 100등분 */
             height: 100vh;
             overflow: hidden;
-            background: linear-gradient(to bottom, #faaca8, #ddd6f3);
+            background: linear-gradient(to bottom, #363e72, #000000);
         }
 
         div[class^="bubble-"] {
             /* 속성 선택자 (잘 쓰진 않음) */
             width: 75px;
             height: 75px;
-            background-color: rgba(244, 172, 242, 0.553);
+            background-color: rgba(39, 73, 124, 0.553);
             border-radius: 50%;
             position: absolute;
             bottom: 6px;
@@ -262,49 +262,29 @@
 
         .hair-top {
             position: absolute;
-            top: -135px;
-            left: 120px;
-            width: 10px;
-            height: 80px;
-            background: linear-gradient(to top, #878787, #fff);
+            top: -80px;
+            left: 105px;
+            width: 40px;
+            height: 5px;
+            background-color: #c3c3c3;
+            z-index: 5;
         }
-
 
         .jelly-hair {
             width: 55px;
-            height: 110px;
-            background: linear-gradient(to bottom, #fff, #878787);
+            height: 80px;
+            /* 배경 이미지 추가 */
+            background-image: url(../assets/img/cocacola_can_image.jpg);
+            /* 배경 이미지 크기 조정 */
+            background-size: contain;
+            background-position: center;
             position: absolute;
+            border-radius: 10px;
             left: 40%;
-            top: -105px;
+            top: -75px;
             z-index: 3;
             animation: hair 10s infinite linear;
             box-shadow: 0px 2px 5px #5a5a5a;
-        }
-
-        .hair-eye {
-            content: '';
-            position: absolute;
-            top: 25px;
-            right: 35px;
-            width: 15px;
-            height: 15px;
-            background-color: #000;
-            border-radius: 50%;
-        }
-
-        .hair-eye2 {
-            position: absolute;
-            top: 25px;
-            left: 35px;
-            width: 15px;
-            /* 원의 지름을 조절합니다 */
-            height: 15px;
-            /* 원의 지름을 조절합니다 */
-            border-radius: 50%;
-            /* 동그라미 모양을 만듭니다 */
-            background-color: #000000;
-            /* 색상을 지정합니다 */
         }
 
         .jelly-hair2 {
@@ -480,15 +460,6 @@
             border-radius: 0 0 50% 50%;
         }
 
-        .jelly-eyebrow {
-            position: absolute;
-            top: -20px;
-            left: 130px;
-            top: 80px;
-            background-color: #000;
-        }
-
-
         .jelly-eye {
             position: absolute;
             top: -20px;
@@ -536,7 +507,6 @@
                 height: 20px;
             }
         }
-
 
         .jelly-inner {
             width: 250px;
@@ -597,15 +567,15 @@
             position: absolute;
             left: 0%;
             /* 왼쪽으로 이동 */
-            top: 75px;
+            top: 72px;
             bottom: 0;
             /* 아래쪽으로 이동 */
             animation: move 10s infinite linear;
             background: linear-gradient(to bottom, #f0b358, #ff9900 100%);
             /* 치즈 색상 */
             border-radius: 50%;
-            border-bottom-left-radius: 50% 90px;
-            border-bottom-right-radius: 50% 90px;
+            border-bottom-left-radius: 50% 150px;
+            border-bottom-right-radius: 50% 150px;
             position: absolute;
             position: relative;
         }
@@ -664,15 +634,20 @@
         <div class="bubble-8"></div>
         <div class="bubble-9"></div>
         <div class="bubble-10"></div>
+        <div class="bubble-11"></div>
+        <div class="bubble-12"></div>
+        <div class="bubble-13"></div>
+        <div class="bubble-14"></div>
+        <div class="bubble-15"></div>
+        <div class="bubble-16"></div>
+        <div class="bubble-17"></div>
+        <div class="bubble-18"></div>
+        <div class="bubble-19"></div>
+        <div class="bubble-20"></div>
         <div class="jelly-wrapper">
             <div class="hair-top"></div>
-            <div class="jelly-hair">
-                <div class="hair-eye"></div>
-                <div class="hair-eye2"></div>
-                <div class="hair-mouth"></div>
-            </div>
+            <div class="jelly-hair"></div>
             <div class="jelly-hair2">
-                <div class="jelly-eyebrow"></div>
                 <div class="jelly-eye"></div>
                 <div class="jelly-mouth"></div>
             </div>
@@ -684,16 +659,6 @@
             <div class="jelly-inner5"></div>
             <div class="jelly-tentacle-1"></div>
             <div class="jelly-tentacle-4"></div>
-            <div class="bubble-11"></div>
-            <div class="bubble-12"></div>
-            <div class="bubble-13"></div>
-            <div class="bubble-14"></div>
-            <div class="bubble-15"></div>
-            <div class="bubble-16"></div>
-            <div class="bubble-17"></div>
-            <div class="bubble-18"></div>
-            <div class="bubble-19"></div>
-            <div class="bubble-20"></div>
         </div>
 </body>
 
