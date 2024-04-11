@@ -4,162 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 06</title>
+    <title>퀴즈 게임</title>
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 
 <body>
-    <header id="header">
-        <h1>
-            <a href="index.html">Quiz</a>
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="quiz01.html">1</a></li>
-                <li><a href="quiz02.html">2</a></li>
-                <li><a href="quiz03.html">3</a></li>
-                <li><a href="quiz04.html">4</a></li>
-                <li><a href="quiz05.html">5</a></li>
-                <li><a href="quiz06.html">6</a></li>
-                <li class="active"><a href="c-quiz01.html">7</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- //header -->
-
-    <main id="main">
-        <div class="quiz__wrap"></div>
-        <div class="quiz__check">정답 확인</div>
-    </main>
-    <!-- //main -->
-
-    <footer id="footer">
-        <a href="mailto:rrkd159@naver.com">rrkd159@naver.com</a>
-    </footer>
-    <!-- //footer -->
-
-
+    <div class="quiz__wrap"></div>
     <script>
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
-        const quizCheck = document.querySelector(".quiz__check");
 
-        // 문제 정보
+        // 문제정보
         let quizInfo = [];
+        let currentIndex = 0;
+        let correctCount = 0;
+        let incorrectCount = 0;
 
         // 문제 가져오기
         const fetchQuiz = () => {
             fetch("https://123dd654.github.io/class2024/json/gineungsaJC2020.json")
                 .then(res => res.json())
                 .then(items => {
-                    // console.log(items);
                     quizInfo = items.map(item => {
                         const formattedQuiz = {
-                            date: "2020~2022년",
-                            type: item.subject,
+                            date: "2020년",
+                            type: item.time, // 시험 시기를 사용
                             question: item.question,
-                            desc: item.desc,
-                            answer: item.correct_answer
+                            choices: item.question_desc ? [item.question_desc] : [], // 보기문제를 사용
+                            answer: item.correct_answer,
+                            desc: "" // 보기 설명이 없을 경우 빈 문자열로 설정
                         }
-                        // 보기 가져오기
-                        const choices = [...item.incorrect_answers, item.correct_answer];
-
-                        // 보기 랜덤 섞기
-                        for (let i = choices.length - 1; i > 0; i--) {
-                            const j = Math.floor(Math.random() * (i + 1));
-                            [choices[i], choices[j]] = [choices[j], choices[i]];
-                        }
-
-                        // 보기 추가하기
-                        formattedQuiz.choices = choices;
-
-                        // 결과값 출력
                         return formattedQuiz;
                     });
-                    // console.log(quizInfo);
-
-                    // 문제 출력
                     updateQuiz();
                 })
+                .catch(error => {
+                    console.error('Error fetching quiz:', error);
+                });
         }
 
         // 문제 출력
         const updateQuiz = () => {
-            const quizArray = [];
-
-            quizInfo.forEach((quiz, index) => {
-                quizArray.push(`
-                    <div class="quiz">
-                        <div class="quiz__header">${quiz.date} ${quiz.type}</div>
-                        <div class="quiz__main">
-                            <div class="question">${index + 1}. ${quiz.question}</div>
-                            <div class="choices">
-                                <label for="choice${index}-1">
-                                    <input type="radio" id="choice${index}-1" name="choice-${index}" value="${quiz.choices[0]}">
-                                    <span>${quiz.choices[0]}</span>
-                                </label>
-                                <label for="choice${index}-2">
-                                    <input type="radio" id="choice${index}-2" name="choice-${index}" value="${quiz.choices[1]}">
-                                    <span>${quiz.choices[1]}</span>
-                                </label>
-                                <label for="choice${index}-3">
-                                    <input type="radio" id="choice${index}-3" name="choice-${index}" value="${quiz.choices[2]}">
-                                    <span>${quiz.choices[2]}</span>
-                                </label>
-                                <label for="choice${index}-4">
-                                    <input type="radio" id="choice${index}-4" name="choice-${index}" value="${quiz.choices[3]}">
-                                    <span>${quiz.choices[3]}</span>
-                                </label>
-                            </div>
-                            <div class="answer none">${quiz.answer}</div>
-                            <div class="desc none">${quiz.desc}</div>
-                        </div>
+            const currentQuiz = quizInfo[currentIndex];
+            let quizWrapTag = `
+            <div class="quiz">
+                <div class="quiz__header">${currentQuiz.date} ${currentQuiz.type}</div>
+                <div class="quiz__main">
+                    <div class="question">${currentIndex + 1}. ${currentQuiz.question}</div>
+                    <div class="choices">
+                        ${currentQuiz.choices.map((choice, index) => `
+                            <label for="choice${index}">
+                                <input type="radio" id="choice${index}" name="choice" value="${choice}">
+                                <span>${choice}</span>
+                            </label>
+                        `).join('')}
                     </div>
-                `)
-            })
+                    <input type="text" id="userAnswer" placeholder="정답을 입력하세요">
+                    <button class="confirm">정답 확인</button>
+                    <button class="next none">다음 문제</button>
+                    <div class="answer none">정답: ${currentQuiz.answer}</div>
+                    <div class="desc none">${currentQuiz.desc ? `설명: ${currentQuiz.desc}` : ''}</div>
+                    <div class="score">맞은 문제: ${correctCount}, 틀린 문제: ${incorrectCount}, 남은 문제: ${quizInfo.length - currentIndex - 1}</div>
+                </div>
+            </div>
+        `;
+            quizWrap.innerHTML = quizWrapTag;
 
-            quizWrap.innerHTML = quizArray.join("");
-        }
+            const quizConfirm = quizWrap.querySelector(".confirm");
+            const quizNext = quizWrap.querySelector(".next");
+            const answerElement = quizWrap.querySelector(".answer");
+            const descElement = quizWrap.querySelector(".desc");
 
-        // 정답 확인
-        quizCheck.addEventListener("click", () => {
-            const quizElements = document.querySelectorAll(".quiz");
-            let correctCount = 0; // 맞은 문제의 갯수를 저장할 변수
+            quizConfirm.addEventListener("click", () => {
+                const userAnswer = document.getElementById("userAnswer").value.trim().toLowerCase();
+                const quizAnswer = currentQuiz.answer.toLowerCase();
 
-            quizElements.forEach((quizElement, index) => {
-                const quizChecked = quizElement.querySelector(`input[name="choice-${index}"]:checked`);  // 체크한 정답
-                const quizAnswer = quizElement.querySelector(".answer");
-                const quizDesc = quizElement.querySelector(".desc");
+                if (userAnswer === quizAnswer) {
+                    answerElement.classList.remove("none");
+                    descElement.classList.remove("none"); // 설명 표시
+                    correctCount++;
+                    alert("정답입니다!");
+                } else {
+                    answerElement.classList.remove("none");
+                    answerElement.textContent = `정답: ${currentQuiz.answer}`;
+                    descElement.classList.remove("none");
+                    descElement.textContent = `${currentQuiz.desc ? `설명: ${currentQuiz.desc}` : ''}`;
+                    incorrectCount++;
+                    alert("오답입니다.");
+                }
+                quizConfirm.classList.add("none");
+                quizNext.classList.remove("none");
+            });
 
-                if (quizChecked) {
-                    const userAnswer = quizChecked.value;    //사용자 정답
-                    const correctAnswer = quizAnswer.textContent;    //정답지 정답
-
-                    if (userAnswer === correctAnswer) {
-                        quizElement.classList.add("good");
-                        quizDesc.classList.remove("none");
-                        correctCount++;         //맞은 문제의 개수 증가
-                    } else {
-                        console.log("오답")
-                        quizElement.classList.add("bad");
-                        quizAnswer.classList.remove("none");
-                        quizDesc.classList.remove("none");
-                    }
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;
+                    updateQuiz();
+                } else {
+                    alert("퀴즈가 종료되었습니다.");
+                    // 여기서 점수와 맞은 갯수/틀린 갯수 표시할 수 있음
                 }
             });
-            // 모든 문제를 확인한 후 점수 계산 및 표시
-            const totalScore = ((correctCount / quizElements.length) * 100).toFixed(2);   //점수 계산
-            alert(`당신의 점수는 ${totalScore}점입니다. 맞은 문제 수: ${correctCount}/${quizElements.length}`);
+        }
 
-        });
-
-        // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz();
-        })
-
+        });
     </script>
-
 </body>
 
 </html>
