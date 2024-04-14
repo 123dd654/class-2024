@@ -11,7 +11,7 @@
 
 <body>
     <div id="quiz__wrap">
-        <div class="quiz__start none">
+        <div class="quiz__start">
             <div class="title">
                 <span>2023.01.20.FRI</span>
             </div>
@@ -30,19 +30,23 @@
         <!-- //quiz__start -->
 
         <div class="quiz__play">
+            <div class="quiz__header">
+                <span class="date"></span>
+                <span class="type"></span>
+            </div>
             <span class="number">01/100</span>
-            <div class="questioin">
-                rsh, rlogin, Telnet의 보안이 취약한 단점을 보완하기 위해 사용되고 있는 프로토콜이다 높은 안정성을 보장하며,
-                포트 번호 22번을 사용하는 원격 접속 프로토콜은 무엇인지작성하시오.
-            </div>
+            <div class="question"></div>
+            <div class="View__problem"></div>
             <div class="answer">
-                <input type="text" placeholder="정답을 입력하세요!">
+                <input type="text" id="userAnswer" placeholder="정답을 입력하세요!">
             </div>
+            <div class="answer2 none">✨ 정답:</div>
             <div class="confirm">
                 <button>이전문제</button>
                 <button>확인하기</button>
                 <button>다음문제</button>
             </div>
+            <div class="score"></div>
         </div>
         <div class="quiz__finish"></div>
         <div class="quiz__bg">
@@ -464,6 +468,120 @@
 
             return blobWrapper.path(spline(points, 1, true)).fill("#000");
         }
+    </script>
+    <script>
+        //처음 표지에서 다음문제로 넘어가기
+        const startButton = document.querySelector('.quiz__start');
+
+        startButton.addEventListener('click', function () {
+            document.querySelector('.quiz__start').style.display = 'none';
+            document.querySelector('.quiz__play').style.display = 'block';
+        })
+
+        //선택자
+        const quizWrap = document.getElementById("quiz__wrap");
+
+        let quizInfo = [];
+        let currentIndex = 0;
+        let correctCount = 0;
+        let incorrectCount = 0;
+
+        //문제 데이터 불러오기
+        const quizDataUrl = "https://123dd654.github.io/class2024/quiz/gineungsaJC2020.json"
+
+        //퀴즈 데이터 불러오기
+        fetch(quizDataUrl)
+            .then(response => response.json())
+            .then(item => {
+                quizInfo = item.map(item => {
+                    const formattedQuiz = {
+                        date: "정보처리",
+                        type: item.time,
+                        question: item.question,
+                        View__problem: item.question_desc ? [item.question_desc] : [],
+                        answer: item.correct_answer,
+                    }
+                    return formattedQuiz;
+                });
+                updateQuiz(currentIndex);
+            })
+        // .catch(error => {
+        //     console.log('Error fetching quiz', error);
+        // })
+
+
+        //문제출력
+        const updateQuiz = () => {
+            const currentQuiz = quizInfo[currentIndex];
+            let quizWrapTag = `
+        <div class="quiz__header">
+            <span class="date">${currentQuiz.date}</span>
+            <span class="type">${currentQuiz.type}</span>
+        </div>
+        <span class="number">${currentIndex + 1}/${quizInfo.length}</span>
+        <div class="question">${currentQuiz.question}</div>
+        <div class="View__problem">${currentQuiz.View__problem.join('<br>')}</div>
+        <div class="answer">
+            <input type="text" id="userAnswer" placeholder="정답을 입력하세요!">
+        </div>
+        <div class="answer2 none">✨ 정답:</div>
+        <div class="confirm">
+            <button class="prev">이전문제</button>
+            <button class="check">확인하기</button>
+            <button class="next">다음문제</button>
+        </div>
+        <div class="score">맞은 문제: ${correctCount}, 틀린 문제: ${incorrectCount}, 남은 문제: ${quizInfo.length - currentIndex - 1}</div>
+    `;
+
+            const quizWrap = document.getElementById("quiz__wrap");
+            quizWrap.innerHTML = quizWrapTag;
+
+            const quizConfirm = quizWrap.querySelector(".confirm");
+            const quizNext = quizWrap.querySelector(".next");
+            const answer2Element = quizWrap.querySelector(".answer");
+
+            quizConfirm.addEventListener("click", () => {
+                const userAnswer = document.getElementById("userAnswer").value.trim().toLowerCase();
+                const quizAnswer = currentQuiz.answer.toLowerCase();
+                const quizElement = document.querySelector('.quiz__play');
+                const answer2Element = quizWrap.querySelector(".answer2");
+
+                if (userAnswer === quizAnswer) {
+                    answer2Element.classList.remove("none");
+                    quizElement.classList.add("good");
+                    correctCount++;
+                } else {
+                    answer2Element.classList.remove("none");
+                    answer2Element.textContent = `정답: ${currentQuiz.answer}`;
+                    quizElement.classList.add("bad");
+                    incorrectCount++;
+                }
+            });
+
+            // // 모든 문제를 확인한 후 점수 계산 및 표시
+            // const totalScore = ((correctCount / quizElements.length) * 100).toFixed(2);   //점수 계산
+            // alert(`당신의 점수는 ${totalScore}점입니다. 맞은 문제 수: ${correctCount}/${quizElements.length}`);
+
+            const quizPrev = quizWrap.querySelector(".prev");
+
+            quizPrev.addEventListener("click", () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateQuiz();
+                } else {
+                    alert("첫 번째 문제입니다.");
+                }
+            });
+
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;
+                    updateQuiz();
+                } else {
+                    alert("퀴즈가 종료되었습니다.")
+                }
+            });
+        };
     </script>
 </body>
 

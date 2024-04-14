@@ -22,7 +22,7 @@
 
         // 문제 가져오기
         const fetchQuiz = () => {
-            fetch("https://123dd654.github.io/class2024/json/gineungsaJC2020.json")
+            fetch("https://123dd654.github.io/class2024/quiz/gineungsaJC2020.json")
                 .then(res => res.json())
                 .then(items => {
                     quizInfo = items.map(item => {
