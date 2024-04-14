@@ -285,6 +285,12 @@ a {
     margin-top: 20px;
 }
 
+.quiz__play .confirm {
+    display: flex;
+    /* 버튼을 수평으로 가운데로 정렬 */
+    justify-content: center;
+}
+
 .quiz__play .confirm button {
     font-size: 20px;
     padding: 10px 20px;
@@ -295,8 +301,14 @@ a {
     color: #fff;
     border: 5px solid #fff;
     cursor: pointer;
+    margin: 15px 5px 0;
 
 }
+
+.quiz__play .confirm button:hover {
+    background-color: #928BFF;
+}
+
 
 /* 미디어 쿼리 */
 @media (max-width: 800px) {
