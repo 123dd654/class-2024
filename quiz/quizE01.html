@@ -43,7 +43,6 @@
             <div class="answer2 none">✨ 정답:</div>
             <div class="desc none">✨ 설명:</div>
             <div class="confirm">
-                <button>이전문제</button>
                 <button>확인하기</button>
                 <button>다음문제</button>
             </div>
@@ -66,6 +65,8 @@
             const quizPlay = document.querySelector(".quiz__play");
             let currentIndex = 0;
             let quizInfo = [];
+            let incorrectCount = 0;
+            let correctCount = 0;
 
             // 문제 가져오기
             const fetchQuiz = () => {
@@ -102,7 +103,6 @@
                             <div class="answer2 none">✨ 정답: ${currentQuiz.answer}</div>
                             <div class="desc none">✨ 설명: ${currentQuiz.desc}</div>
                             <div class="confirm">
-                                <button>이전문제</button>
                                 <button>확인하기</button>
                                 <button class="next">다음문제</button>
                             </div>
@@ -111,6 +111,7 @@
                     </div>
                 `;
                 quizPlay.innerHTML = quizPlayTag;
+
 
                 const quizConfirm = quizPlay.querySelector(".confirm");
                 const quizNext = quizPlay.querySelector(".next");
@@ -141,25 +142,25 @@
                     }
                     quizConfirm.classList.add("none");
                     quizNext.classList.remove("none");
-                    quizPrev.classList.remove("none");
+                    // quizPrev.classList.remove("none");
                 });
 
-                quizNext.addEventListener("click", () => {
-                    if (currentIndex < quizInfo.length - 1) {
-                        currentIndex++;
-                        updateQuiz();
-                    } else {
-                        alert("퀴즈가 종료되었습니다.");
-                        // 여기서 점수와 맞은 갯수/틀린 갯수 표시할 수 있음
-                    }
-                });
+                // quizNext.addEventListener("click", () => {
+                //     if (currentIndex < quizInfo.length - 1) {
+                //         currentIndex++;
+                //         updateQuiz();
+                //     } else {
+                //         alert("퀴즈가 종료되었습니다.");
+                //         // 여기서 점수와 맞은 갯수/틀린 갯수 표시할 수 있음
+                //     }
+                // });
 
-                quizPrev.addEventListener("click", () => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        updateQuiz();
-                    }
-                });
+                // quizPrev.addEventListener("click", () => {
+                //     if (currentIndex > 0) {
+                //         currentIndex--;
+                //         updateQuiz();
+                //     }
+                // });
             };
         </script>
 </body>
