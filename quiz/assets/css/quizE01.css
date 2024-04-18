@@ -256,7 +256,7 @@ a {
     margin-bottom: 20px;
 }
 
-.quiz__play .number {
+/* .quiz__play .number {
     position: absolute;
     right: -10px;
     top: -68px;
@@ -269,7 +269,7 @@ a {
     padding: 10px 30px;
     border: 10px solid #fff;
     z-index: 101;
-}
+} */
 
 .quiz__play .question {
     font-family: 'GmarketSans';
@@ -355,8 +355,9 @@ a {
     background-color: #00000032;
     margin-top: 10px;
     border: 0;
-    font-size: 25px;
-    padding: 10px
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'GmarketSans';
 }
 
 .quiz__play .desc {
@@ -366,12 +367,13 @@ a {
     text-align: left;
     background-color: #00000032;
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
     line-height: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    font-family: 'GmarketSans';
 
 }
 
