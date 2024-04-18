@@ -81,6 +81,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: url(../img/cursor.png);
 }
 
 #quiz__wrap::before {
@@ -365,13 +366,31 @@ a {
     text-align: left;
     background-color: #00000032;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 25px;
     padding: 10px;
     line-height: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
 }
+
+.quiz__play .score {
+    min-height: 66px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 10px 30px;
+    z-index: 101;
+}
+
+.quiz__play .score::before {
+    content: url(../img/coin.png);
+    width: 20px;
+    height: 20px;
+}
+
 
 
 /* good, bad */
@@ -386,7 +405,7 @@ a {
     border: 10px solid red;
     border-radius: 50%;
     position: absolute;
-    left: 20px;
+    left: 0px;
     top: 20px;
     z-index: 100;
 }
@@ -401,7 +420,7 @@ a {
     height: 10px;
     background-color: red;
     position: absolute;
-    left: 0;
+    left: -20px;
     top: 80px;
     border-radius: 30px;
     transform: rotate(45deg);
@@ -414,7 +433,7 @@ a {
     height: 10px;
     background-color: red;
     position: absolute;
-    left: 0;
+    left: -20px;
     top: 80px;
     border-radius: 30px;
     transform: rotate(-45deg);

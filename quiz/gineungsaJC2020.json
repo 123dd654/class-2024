@@ -3,7 +3,8 @@
         "time": "기능사(2020년03회)",
         "question": "빈칸에 알맞은 명령문을 완성하시오.",
         "question_desc": "ALTER TABLE customer (   ) phone varchar(255)",
-        "correct_answer": "ADD"
+        "correct_answer": "ADD",
+        "desc": "주어진 ALTER TABLE 문에서 customer 테이블에 phone 열을 추가하는 명령어를 작성해야 합니다. 따라서 빈칸에 들어갈 명령어는 ADD입니다."
     },
     {
         "time": "기능사(2020년03회)",

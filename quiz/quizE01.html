@@ -62,11 +62,14 @@
                 });
             });
 
+
             const quizPlay = document.querySelector(".quiz__play");
-            let currentIndex = 0;
+
             let quizInfo = [];
-            let incorrectCount = 0;
-            let correctCount = 0;
+            let currentIndex = 0;       //현재의 값
+            let incorrectCount = 0;     //틀린갯수
+            let correctCount = 0;       //맞은갯수
+
 
             // 문제 가져오기
             const fetchQuiz = () => {
@@ -80,33 +83,41 @@
                                 question: item.question,
                                 question_desc: item.question_desc,
                                 answer: item.correct_answer,
-                                desc: "" // 보기 설명이 없을 경우 빈 문자열로 설정
+                                desc: item.desc
                             };
                             return formattedQuiz;
                         });
                         updateQuiz();
                     });
+                // console.log(quizInfo)
             };
 
             const updateQuiz = () => {
                 const currentQuiz = quizInfo[currentIndex];
-                const quizPlayTag = `
+                let quizPlayTag = `
                     <div class="quiz">
                         <div class="quiz__header">${currentQuiz.date} ${currentQuiz.type}</div>
                         <span class="number">${currentIndex + 1} / ${quizInfo.length}</span>
                         <div class="quiz__main">
-                            <div class="question">${currentIndex + 1}. ${currentQuiz.question}</div>
-                            <div class="View__problem">${currentIndex + 1}. ${currentQuiz.question_desc}</div>
+                            <div class="question">${currentIndex + 1}. ${currentQuiz.question}</div>`;
+
+                if (currentQuiz.question_desc != undefined) {
+                    quizPlayTag += `<div class="View__problem">${currentIndex + 1}. ${currentQuiz.question_desc}</div>`
+                }
+                quizPlayTag += `
                             <div class="answer">
                                 <input type="text" id="userAnswer" placeholder="정답을 입력하세요!">
                             </div>
                             <div class="answer2 none">✨ 정답: ${currentQuiz.answer}</div>
                             <div class="desc none">✨ 설명: ${currentQuiz.desc}</div>
                             <div class="confirm">
-                                <button>확인하기</button>
-                                <button class="next">다음문제</button>
+                                <button class="check">확인하기</button>
+                                <button class="next none">다음문제</button>
                             </div>
-                            <div class="score"></div>
+                            <div class="score">
+                                맞은문제: ${correctCount}
+                                틀린문제: ${incorrectCount}
+                                남은문제: ${quizInfo.length - currentIndex}
                         </div>
                     </div>
                 `;
@@ -115,53 +126,46 @@
 
                 const quizConfirm = quizPlay.querySelector(".confirm");
                 const quizNext = quizPlay.querySelector(".next");
+                const quizCheck = quizPlay.querySelector(".check")
+                const quizAnswer = quizPlay.querySelector(".answer")
+                const quizInput = quizPlay.querySelector(".answer input")
                 const answerElement = quizPlay.querySelector(".answer2");
                 const descElement = quizPlay.querySelector(".desc");
 
-                quizConfirm.addEventListener("click", () => {
-                    const userAnswer = document.getElementById("userAnswer").value.trim().toLowerCase();
-                    const quizAnswer = currentQuiz.answer.toLowerCase();
-                    const quizElement = quizPlay.querySelector(".quiz")
 
-                    if (userAnswer === quizAnswer) {
-                        answerElement.classList.remove("none");
-                        descElement.classList.remove("none"); // 설명 표시
-                        answerElement.textContent = `✨ 정답: ${currentQuiz.answer}`;
-                        descElement.textContent = `${currentQuiz.desc ? `✨ 설명: ${currentQuiz.desc}` : ''}`;
+                quizCheck.addEventListener("click", () => {
+                    const quizElement = document.querySelector(".quiz")
+
+                    const userAnswer = quizInput.value;
+                    const correctAnswer = quizInfo[currentIndex].answer
+
+
+                    if (userAnswer == correctAnswer) {
                         quizElement.classList.add("good")
                         correctCount++;
-                        // alert("정답입니다!");
+
                     } else {
-                        answerElement.classList.remove("none");
-                        answerElement.textContent = `✨ 정답: ${currentQuiz.answer}`;
-                        descElement.textContent = `${currentQuiz.desc ? `✨ 설명: ${currentQuiz.desc}` : ''}`;
-                        descElement.classList.remove("none");
                         quizElement.classList.add("bad")
                         incorrectCount++;
-                        // alert("오답입니다.");
+
                     }
-                    quizConfirm.classList.add("none");
-                    quizNext.classList.remove("none");
-                    // quizPrev.classList.remove("none");
+                    answerElement.classList.remove("none")
+                    descElement.classList.remove("none")
+                    quizNext.classList.remove("none")
+                    quizCheck.classList.add("none")
+
                 });
 
-                // quizNext.addEventListener("click", () => {
-                //     if (currentIndex < quizInfo.length - 1) {
-                //         currentIndex++;
-                //         updateQuiz();
-                //     } else {
-                //         alert("퀴즈가 종료되었습니다.");
-                //         // 여기서 점수와 맞은 갯수/틀린 갯수 표시할 수 있음
-                //     }
-                // });
+                quizNext.addEventListener("click", function () {
+                    if (currentIndex < quizInfo.length - 1) {
+                        currentIndex++;
+                        updateQuiz();
+                    } else {
+                        alert("퀴즈가 종료되었습니다.")
+                    }
+                })
+            }
 
-                // quizPrev.addEventListener("click", () => {
-                //     if (currentIndex > 0) {
-                //         currentIndex--;
-                //         updateQuiz();
-                //     }
-                // });
-            };
         </script>
 </body>
 
