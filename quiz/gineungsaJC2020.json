@@ -9,57 +9,67 @@
     {
         "time": "기능사(2020년03회)",
         "question": "rsh, rlogin, Telnet의 보안이 취약한 단점을 보완하기 위해 사용되고 있는 프로토콜이다 높은 안정성을 보장하며, 포트 번호 22번을 사용하는 원격 접속 프로토콜은 무엇인지 작성하시오.",
-        "correct_answer": "SSH"
+        "correct_answer": "SSH",
+        "desc": "rsh, rlogin, Telnet의 보안 취약점을 보완하기 위해 사용되는 프로토콜은 SSH입니다."
     },
     {
         "time": "기능사(2020년03회)",
         "question": "다음은 OSI 7계층에 관한 설명이다. 빈칸을 완성하시오.",
         "question_desc": "(   )는 사용자 또는 어플리케이션이 네트워크에 접근할 수 있도록 도와주는 인터페이스이다.",
-        "correct_answer": "응용계층"
+        "correct_answer": "응용계층",
+        "desc": "OSI 7계층에서 사용자 또는 어플리케이션이 네트워크에 접근할 수 있도록 도와주는 인터페이스는 응용계층입니다."
     },
     {
         "time": "기능사(2020년03회)",
         "question": "웹과 비동기적 데이터 교환 및 조작을 위해 사용되며, XMLHttpRequest 객체를 이용하여 웹 페이지의 일부만을 수정할 수 있는 것은 무엇인가?",
-        "correct_answer": "AJAX"
+        "correct_answer": "AJAX",
+        "desc": "웹과 비동기적 데이터 교환을 위해 사용되며, XMLHttpRequest 객체를 이용하여 웹 페이지의 일부를 수정할 수 있는 것은 AJAX입니다."
     },
     {
         "time": "기능사(2020년03회)",
         "question": "다음 빈칸을 완성하시오.",
         "question_desc": "개체가 가지고 있는 요소 또는 성질을 (   )라고 부른다.",
-        "correct_answer": "속성"
+        "correct_answer": "속성",
+        "desc": "개체가 가지고 있는 요소 또는 성질을 속성이라고 부릅니다."
     },
     {
         "time": "기능사(2020년04회)",
         "question": "다음 빈칸을 완성하시오.",
         "question_desc": "DELETE FROM <테이블> (___) <조건>",
-        "correct_answer": "WHERE"
+        "correct_answer": "WHERE",
+        "desc": "DELETE FROM <테이블> WHERE <조건> 구문에서 빈칸은 WHERE입니다."
     },
     {
         "time": "기능사(2020년04회)",
         "question": "인간의 실수에 의해 예상 기대와는 다르게 소프트웨어가 예정된 설계에 어긋난 코드를 발생하는 오류를 나타내는 용어를 작성하시오.",
-        "correct_answer": "휴먼에러"
+        "correct_answer": "휴먼에러",
+        "desc": "인간의 실수로 발생하는 소프트웨어의 설계에 어긋난 코드를 휴먼에러라고 합니다."
     },
     {
         "time": "기능사(2020년04회)",
         "question": "다음을 참고하여 운영체제의 발전과정 중 빈칸을 완성하시오.",
         "question_desc": "(   ) - 다중처리 - 범용 - 분산처리",
-        "correct_answer": "일괄처리"
+        "correct_answer": "일괄처리",
+        "desc": "운영체제의 발전과정 중 일괄처리 - 다중처리 - 범용 - 분산처리입니다."
     },
     {
         "time": "기능사(2020년04회)",
         "question": "데이터베이스에서 테이블의 데이터를 빠르게 찾기 위한 기능을 작성하시오.",
-        "correct_answer": "index"
+        "correct_answer": "index",
+        "desc": "데이터베이스에서 테이블의 데이터를 빠르게 찾기 위한 기능은 index입니다."
     },
     {
         "time": "기능사(2020년04회)",
         "question": "상위에서 하위 모듈로의 방향으로 진행하는 하향식 통합 테스트에서 하위 모듈을 대체하기 위해 필요한 것을 작성하시오.",
-        "correct_answer": "스텁"
+        "correct_answer": "스텁",
+        "desc": "하향식 통합 테스트에서 하위 모듈을 대체하기 위해 필요한 것은 스텁입니다."
     },
     {
         "time": "기능사(2020년04회)",
         "question": "다음 보기에서 설명하는 UNIX 명령어를 작성하시오.",
         "question_desc": "(   ) : 파일이나 폴더의 읽기, 쓰기, 실행 등의 권한 변경",
-        "correct_answer": "chmod"
+        "correct_answer": "chmod",
+        "desc": "UNIX 명령어 중 파일이나 폴더의 권한을 변경하는 명령어는 chmod입니다."
     },
     {
         "time": "기능사(2021년01회)",
