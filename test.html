@@ -9,159 +9,216 @@
 
 <body>
     <script>
-        // for = > 반복
-        // 1~10까지 출력 for()
-        // 조건식 검사 : 1
-        // 실행문 실행 : 2
-        // 증감가 : 3
-        // 조건식 : i <= 10; => true / false
-        for (let i = 1; i <= 10; i++) {
-            console.log(); // 실행하는 기능
-        }
-        // 5단 출력
-        //함수
-        function func() {
-            let i = 5, j = 4, k = 1, l, m;
-            l = 5 > 10;
-            m = j <= 4 && k < 1;
-            console.log(l)
-            console.log(m)
-        }
-        func();
-        function func() {
-            let i = 5, j = 4, k = 1, l, m;
-            l = i > 10;
-            m = j <= 4 || k < 1; // true
-            console.log(l)
-            console.log(m)
-        }
-        func();
-        //
-        const arr = [100, 200, 300];
-        arr.push(600)
-        console.log(arr)
-        //
-        let num = 0;
-        while (true) {
-            num++;
-            if (num == 5) {
-                break; // 반복문을 종료하는 명령어
-            };
-            console.log(num); // 실행 순서 1 안에
-        } // => 1 실행 순서
-        //
-        let numm = 0;
-        // false : 0 , “”, undefined , null
-        while (0) {
-            num++;
-            if (num == 5) {
-                break;
-            };
-        }
-        console.log(numm);
-        //
-        let nummb = 0;
-        while (nummbl == 0) {
-            num++;
-            if (num == 5) {
-                break;
-            };
-        }
-        console.log(nummb);
-        //
-        let nummbl = 0;
-        while (nummbl == 0) {
-            if (num == 5) {
-                break;
-            };
-            num++;
-        }
-        console.log(nummbl);
-        //
-        let nummbls = 0;
-        while (true) {
-            num++;
-            if (num == 5) {
-                break;
-            }
-        }
-        console.log(nummblsf);
-        //
-        num = 0;
-        while (true) {
-            num++;
-            if (num == 5) {
-                break;
-            }
-            console.log(nummblsf);
-        }
-        //연산자
-        // 논리연산자(true,false), 산술연산자(+,-,*,/,), 대입연산자(=,==,===,<=),
-        // 비트연산자
-        //
-        let a = 1;
-        a++;
-        console.log(a)
-        //
-        let b = 1;
-        ++b;
-        console.log(b)
-        //최고 점수 구하기/ 최저 점수 구하기/평균 구하기
-        {
-            let data = [70, 80, 90, 20, 30, 40];
-            let best = 0;
-            let score = 0;
-            // 0
-            // [i] , eq()
-            // data[0] = 70
-            // data[1] = 70
-            // data[2] = 70
-            // data[3] = 70
-            // data[4] = 70
-            // data[5] = 70
-            // i = 0;
-            for (i = 0; i < data.length; i++) {
-                if (80 > 80) {
-                    best++;
-                }
-                if (70 < 80) {
-                    score = data[i]
-                    // 80
-                }
-                // => i = 2
-            }
-            console.log(score)
-            console.log(best);
-        }
-        //매개변수
-        //
-        function func1() {
-        }
-        function func1() {
-            if (10 > 30) {
-                return num1
-            } else {
-                return num2
-            }
-        }
-        func1(10, 20, 30);
-        function func(num1, num2, num3) {
-            if (num1 > num3) return num1
-            else return num2
-        }
-        func(10, 200, 30) + func(300, 400, 400);
-        //콜백함수 재귀함수 외우기
-        //
-        function func() {
-            // 산술 연산자 => 수학 => 0123456
-            // 논리 연산자 => 국어 => true
-            let i = 100, j = 200, k = 300;
-            // + - / *
-            i = i / j;
-            // i = 0.5
-            0.5 += 200
-            console.log(200.5)
-        }
+        // // for = > 반복
+        // // 1~10까지 출력 for()
+        // // 조건식 검사 : 1
+        // // 실행문 실행 : 2
+        // // 증감가 : 3
+        // // 조건식 : i <= 10; => true / false
+        // for (let i = 1; i <= 10; i++) {
+        //     console.log(); // 실행하는 기능
+        // }
+        // // 5단 출력
+        // //함수
+        // function func() {
+        //     let i = 5, j = 4, k = 1, l, m;
+        //     l = 5 > 10;
+        //     m = j <= 4 && k < 1;
+        //     console.log(l)
+        //     console.log(m)
+        // }
+        // func();
+        // function func() {
+        //     let i = 5, j = 4, k = 1, l, m;
+        //     l = i > 10;
+        //     m = j <= 4 || k < 1; // true
+        //     console.log(l)
+        //     console.log(m)
+        // }
+        // func();
+        // //
+        // const arr = [100, 200, 300];
+        // arr.push(600)
+        // console.log(arr)
+        // //
+        // let num = 0;
+        // while (true) {
+        //     num++;
+        //     if (num == 5) {
+        //         break; // 반복문을 종료하는 명령어
+        //     };
+        //     console.log(num); // 실행 순서 1 안에
+        // } // => 1 실행 순서
+        // //
+        // let numm = 0;
+        // // false : 0 , “”, undefined , null
+        // while (0) {
+        //     num++;
+        //     if (num == 5) {
+        //         break;
+        //     };
+        // }
+        // console.log(numm);
+        // //
+        // let nummb = 0;
+        // while (nummbl == 0) {
+        //     num++;
+        //     if (num == 5) {
+        //         break;
+        //     };
+        // }
+        // console.log(nummb);
+        // //
+        // let nummbl = 0;
+        // while (nummbl == 0) {
+        //     if (num == 5) {
+        //         break;
+        //     };
+        //     num++;
+        // }
+        // console.log(nummbl);
+        // //
+        // let nummbls = 0;
+        // while (true) {
+        //     num++;
+        //     if (num == 5) {
+        //         break;
+        //     }
+        // }
+        // console.log(nummblsf);
+        // //
+        // num = 0;
+        // while (true) {
+        //     num++;
+        //     if (num == 5) {
+        //         break;
+        //     }
+        //     console.log(nummblsf);
+        // }
+        // //연산자
+        // // 논리연산자(true,false), 산술연산자(+,-,*,/,), 대입연산자(=,==,===,<=),
+        // // 비트연산자
+        // //
+        // let a = 1;
+        // a++;
+        // console.log(a)
+        // //
+        // let b = 1;
+        // ++b;
+        // console.log(b)
+        // //최고 점수 구하기/ 최저 점수 구하기/평균 구하기
+        // {
+        //     let data = [70, 80, 90, 20, 30, 40];
+        //     let best = 0;
+        //     let score = 0;
+        //     // 0
+        //     // [i] , eq()
+        //     // data[0] = 70
+        //     // data[1] = 70
+        //     // data[2] = 70
+        //     // data[3] = 70
+        //     // data[4] = 70
+        //     // data[5] = 70
+        //     // i = 0;
+        //     for (i = 0; i < data.length; i++) {
+        //         if (80 > 80) {
+        //             best++;
+        //         }
+        //         if (70 < 80) {
+        //             score = data[i]
+        //             // 80
+        //         }
+        //         // => i = 2
+        //     }
+        //     console.log(score)
+        //     console.log(best);
+        // }
+        // //매개변수
+        // //
+        // function func1() {
+        // }
+        // function func1() {
+        //     if (10 > 30) {
+        //         return num1
+        //     } else {
+        //         return num2
+        //     }
+        // }
+        // func1(10, 20, 30);
+        // function func(num1, num2, num3) {
+        //     if (num1 > num3) return num1
+        //     else return num2
+        // }
+        // func(10, 200, 30) + func(300, 400, 400);
+        // //콜백함수 재귀함수 외우기
+        // //
+        // function func() {
+        //     // 산술 연산자 => 수학 => 0123456
+        //     // 논리 연산자 => 국어 => true
+        //     let i = 100, j = 200, k = 300;
+        //     // + - / *
+        //     i = i / j;
+        //     // i = 0.5
+        //     0.5 += 200
+        //     console.log(200.5)
+        // }
+
+        // {
+        //     function func() {
+        //         let i = 5, j = 4, k = 1, l, m;
+        //         l = i > 5 || j != 0;
+        //         m = j <= 4 && k < 1;
+
+        //         document.write(l);
+        //         document.write(m);
+        //     }
+        //     func();
+        // }
+        // {
+        //     let num = 0;
+
+        //     while (false) {
+        //         num++;
+        //         if (num == 3) {
+        //             continue;
+        //         }
+        //         if (num > 6) {
+        //             break;
+        //         }
+        //     }
+        //     console.log(num);
+        // }
+        // {
+        //     let data = [70, 80, 75, 60, 90];
+        //     let best = 0;
+        //     let score = 50;
+
+        //     for (let i = 0; i < data.length; i++) {
+        //         if (data[i] > 80) {
+        //             best++;
+        //         }
+        //         if (score > data[i]) {
+        //             score = data[i];
+        //         }
+        //     }
+
+        //     console.log(best, score);
+        // }
+        // {
+        //     function solution(a, b, c) {
+        //         let answer = "YES", max;
+        //         let tot = a + b + c;
+
+        //         if (a > b) max = a;
+        //         else max = b;
+        //         if (c > max) max = c;
+        //         if (tot - max <= max) answer = "NO";
+
+        //         return answer;
+        //     }
+
+        //     console.log(solution(13, 33, 17));
+        // }
     </script>
 </body>
 

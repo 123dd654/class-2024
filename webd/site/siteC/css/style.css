@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    width: 100%;
+    height: 650px;
+    display: flex;
+}
+
+#aside {
+    width: 200px;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 1000;
+    position: relative;
+}
+
+#aside .logo {
+    width: 100%;
+    height: 20%;
+    background-color: #539773;
+}
+
+/* nav */
+#aside .nav {
+    width: 100%;
+    height: 80%;
+    background-color: #407559;
+
+}
+
+#aside .nav>ul {
+    text-align: center;
+    position: relative;
+}
+
+#aside .nav>ul>li {
+    display: flex;
+
+}
+
+#aside .nav>ul>li>a {
+    background-color: #ffffff;
+    text-decoration: none;
+    color: #000;
+    padding: 20px 50px;
+    margin: 0 auto;
+}
+
+#aside .nav>ul>li>a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#aside .nav>ul>li>ul {}
+
+#aside .nav>ul>li>ul>li {}
+
+#aside .nav>ul>li>ul>li>a {
+    display: none;
+    text-decoration: none;
+    list-style: none;
+    background-color: #fff;
+}
+
+
+#main {
+    width: 800px;
+    height: 100%;
+    background-color: #ddd;
+}
+
+#main .slider {
+    width: 100%;
+    height: 350px;
+}
+
+.slider__wrap {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider__wrap .slider {
+    position: relative;
+}
+
+.slider__wrap .slider img {
+    vertical-align: top;
+}
+
+.slider__wrap .slider span {
+    background-color: #fff;
+    z-index: 10000;
+}
+
+#main .contents {
+    width: 100%;
+    display: flex;
+
+}
+
+#main .contents .notice {
+    width: 33.333%;
+    height: 200px;
+    background-color: #4cb677;
+}
+
+#main .contents .gallery {
+    width: 33.333%;
+    height: 200px;
+    background-color: #39b76c;
+}
+
+#main .contents .banner {
+    width: 33.333%;
+    height: 200px;
+    background-color: #17b556;
+}
+
+#main .footer {
+    width: 100%;
+    display: flex;
+
+}
+
+#main .footer .footer1 {
+    width: 20%;
+    height: 100px;
+    background-color: #429e67;
+}
+
+#main .footer .footer2 {
+    width: 80%;
+    height: 100px;
+}
+
+#main .footer .footer2 .footer2-1 {
+    width: 100%;
+    height: 50px;
+    background-color: #32754d;
+}
+
+#main .footer .footer2 .footer2-2 {
+    width: 100%;
+    height: 50px;
+    background-color: #26573a;
+}

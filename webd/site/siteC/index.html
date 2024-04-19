@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>c-3</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <h1 class="logo"></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">협회소개</a>
+                        <ul>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">명인</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">행사안내</a>
+                        <ul>
+                            <li><a href="#">요리경연대회</a></li>
+                            <li><a href="#">전시참가</a></li>
+                            <li><a href="#">참가신청</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">홍보마딩</a>
+                        <ul>
+                            <li><a href="#">축제소식</a></li>
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">레시피</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">회원마당</a>
+                        <ul>
+                            <li><a href="#">Q&A</a></li>
+                            <li><a href="#">사진갤러리</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+            <section class="section">
+                <div class="slider__wrap">
+                    <div class="slider s1">
+                        <img src="../siteC/images/slider01.jpg" alt="이미지1">
+                        <span>새로운 먹거리</span>
+                    </div>
+                    <div class="slider s2">
+                        <img src="../siteC/images/slider02.jpg" alt="이미지2">
+                        <span>새로운 먹거리</span>
+                    </div>
+                    <div class="slider s3">
+                        <img src="../siteC/images/slider03.jpg" alt="이미지3">
+                        <span>새로운 먹거리</span>
+                    </div>
+                </div>
+            </section>
+            <article class="contents">
+                <div class="notice"></div>
+                <div class="gallery"></div>
+                <div class="banner"></div>
+            </article>
+            <footer class="footer">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let currentIndex = 0;
+        $(".slider__wrap").append($(".slider").first().clone(true));
+
+        setInterval(() => {
+            currentIndex++;
+            $(".slider__wrap").animate({ marginLeft: -currentIndex * 100 + "%" }, 600);
+
+            if (currentIndex == 3) {
+                setTimeout(() => {
+                    $(".slider__wrap").animate({ marginLeft: 0 }, 0);
+                    currentIndex = 0;
+                }, 700)
+            }
+        }, 3000);
+    </script>
+</body>
+
+</html>

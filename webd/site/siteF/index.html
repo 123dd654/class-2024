@@ -141,46 +141,72 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         //탭 메뉴
-        const tabBtn = $(".notice .title>ul>li");    //버튼 설정
-        const tabCont = $(".notice .cont>div");      //콘텐츠 설정
+        // const tabBtn = $(".notice .title>ul>li");    //버튼 설정
+        // const tabCont = $(".notice .cont>div");      //콘텐츠 설정
 
         //모든 콘텐츠를 안보이게 설정 --> 첫번째 콘텐츠만 보이게 처리
-        tabCont.hide().eq(0).show();
+        // tabCont.hide().eq(0).show();
 
-        tabBtn.click(function (e) {
-            e.preventDefault();    //클릭할떄 위로 올라가는거 막아주기
-            const index = $(this).index();      //내가 클릭한 번호를 저장
-            // alert(index)
+        // tabBtn.click(function (e) {
+        //     e.preventDefault();    //클릭할떄 위로 올라가는거 막아주기
+        //     const index = $(this).index();      //내가 클릭한 번호를 저장
+        //     // alert(index)
 
-            $(this).addClass("active").siblings().removeClass("active")
-            tabCont.eq(index).show().siblings().hide();
-        })
-
-
-
-        const tabBtn1 = $(".notice .title>ul>li");
-        const tabCont1 = $(".notice .cont>div");
-
-        tabBtn.hide().eq(0).show();
+        //     $(this).addClass("active").siblings().removeClass("active")
+        //     tabCont.eq(index).show().siblings().hide();
+        // })
 
 
+
+        // const tabBtn1 = $(".notice .title>ul>li");
+        // const tabCont1 = $(".notice .cont>div");
+
+        // tabBtn.hide().eq(0).show();
+
+
+
+        // //메뉴
+        // $("nav>ul>li").mouseenter(function () {
+        //     $(this).find(">ul").stop().slideDown();
+        // });
+        // $("nav>ul>li").mouseleave(function () {
+        //     $(this).find(">ul").stop().slideUp();
+        // })
+
+
+        // //이미지슬라이드(페이드효과)
+        // window.onload = function () {
+        //     let currentIndex = 0;
+        //     const slider = document.querySelectorAll(".slider");
+        //     slider.forEach(img => img.style.opacity = "0");
+        //     slider[0].style.opacity = "1";
+
+
+        //     setInterval(() => {
+        //         let nextIndex = (currentIndex + 1) % slider.length;
+
+        //         slider[currentIndex].style.opacity = "0";
+        //         slider[nextIndex].style.opacity = "1";
+        //         slider.forEach(img => img.style.transition = "all 1s");
+
+        //         currentIndex = nextIndex;
+        //     }, 3000);
+        // }
 
         //메뉴
-        $("nav>ul>li").mouseenter(function () {
-            $(this).find(">ul").stop().slideDown();
-        });
-        $("nav>ul>li").mouseleave(function () {
-            $(this).find(">ul").stop().slideUp();
+        $("nav>ul>li").mouseover(function () {
+            $("nav>ul>li>ul").stop().fadeIn(900);
+        })
+        $("nav>ul>li").mouseout(function () {
+            $("nav>ul>li>ul").stop().fadeOut(100);
         })
 
-
-        //이미지슬라이드(페이드효과)
+        //이미지슬라이드
         window.onload = function () {
             let currentIndex = 0;
             const slider = document.querySelectorAll(".slider");
             slider.forEach(img => img.style.opacity = "0");
             slider[0].style.opacity = "1";
-
 
             setInterval(() => {
                 let nextIndex = (currentIndex + 1) % slider.length;
@@ -189,8 +215,8 @@
                 slider[nextIndex].style.opacity = "1";
                 slider.forEach(img => img.style.transition = "all 1s");
 
-                currentIndex = nextIndex;
-            }, 3000);
+                currentIndex = nextIndex
+            }, 3000)
         }
     </script>
 </body>
