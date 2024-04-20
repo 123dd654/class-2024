@@ -93,11 +93,16 @@ a {
 }
 
 .quiz__start .title {
-    margin-top: 20px;
+    margin-top: 10px;
+    background-image: url(../img/bone.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
 }
 
 .quiz__start .title span {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .quiz__start .text {
