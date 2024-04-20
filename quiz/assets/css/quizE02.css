@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'SangjuDajungdagam';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sangju/SangjuDajungdagam.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/sangju/SangjuDajungdagam.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/sangju/SangjuDajungdagam.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/sangju/SangjuDajungdagam.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/sangju/SangjuDajungdagam.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'SangjuDajungdagam';
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#quiz__wrap {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    border: 10px solid #000;
+    display: flex;
+    background-image: url(https://i.pinimg.com/originals/d7/b7/e3/d7b7e3269d3986cac556a97cb7efe31a.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -100;
+}
+
+.quiz__start {
+    width: 30vw;
+    height: 55vh;
+    border: 0px solid #3c3c3c;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 200px;
+    backdrop-filter: blur(10px);
+}
+
+.quiz__start .title {
+    margin-top: 20px;
+}
+
+.quiz__start .title span {
+    font-size: 24px;
+}
+
+.quiz__start .text {
+    margin-top: 20px;
+}
+
+.quiz__start .text span {
+    font-size: 25px;
+    color: #000000;
+}
+
+.quiz__start .text h1 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.quiz__start .text ul {
+    margin-top: 10px;
+}
+
+.quiz__start .text li {
+    color: #000000;
+    line-height: 1.3;
+    font-size: 30px;
+}
+
+.quiz__start .btn {
+    padding: 30px;
+    margin-bottom: 30px;
+
+}
+
+.quiz__start .btn button {
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.245);
+    backdrop-filter: blur(10px);
+    border: 1px solid beige;
+}
+
+.quiz__start .btn button:hover {
+    /* background-color: #fff; */
+    color: beige;
+}
