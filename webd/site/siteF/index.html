@@ -141,28 +141,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         //탭 메뉴
-        // const tabBtn = $(".notice .title>ul>li");    //버튼 설정
-        // const tabCont = $(".notice .cont>div");      //콘텐츠 설정
+        const tabBtn = $(".notice .title>ul>li");    //버튼 설정
+        const tabCont = $(".notice .cont>div");      //콘텐츠 설정
 
         //모든 콘텐츠를 안보이게 설정 --> 첫번째 콘텐츠만 보이게 처리
-        // tabCont.hide().eq(0).show();
+        tabCont.hide().eq(0).show();
 
-        // tabBtn.click(function (e) {
-        //     e.preventDefault();    //클릭할떄 위로 올라가는거 막아주기
-        //     const index = $(this).index();      //내가 클릭한 번호를 저장
-        //     // alert(index)
+        tabBtn.click(function (e) {
+            e.preventDefault();    //클릭할떄 위로 올라가는거 막아주기
+            const index = $(this).index();      //내가 클릭한 번호를 저장
+            // alert(index)
 
-        //     $(this).addClass("active").siblings().removeClass("active")
-        //     tabCont.eq(index).show().siblings().hide();
-        // })
-
-
-
-        // const tabBtn1 = $(".notice .title>ul>li");
-        // const tabCont1 = $(".notice .cont>div");
-
-        // tabBtn.hide().eq(0).show();
-
+            $(this).addClass("active").siblings().removeClass("active")
+            tabCont.eq(index).show().siblings().hide();
+        })
 
 
         // //메뉴
