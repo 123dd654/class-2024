@@ -43,7 +43,7 @@ body {
     border-bottom: 1px solid #d2d2d2;
 }
 
-.header__inner h1 {
+.header__inner h1 a {
     font-family: 'Montserrat';
     color: #d2d2d2;
     font-weight: 200;
@@ -55,15 +55,20 @@ body {
 .header__inner h1 em {
     font-weight: 800;
     font-style: normal;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    color: #d2d2d2;
 }
 
 #main {}
 
-.main__inner {}
+.main__inner p span {}
 
 #footer {
     width: 100%;
     /* background-color: rgba(255, 255, 255, 0.1); */
+    position: relative;
+    z-index: 20000;
 }
 
 .footer__inner {}
@@ -84,9 +89,29 @@ body {
     display: inline-block;
     font-family: 'Montserrat';
     line-height: 1;
+    background-color: #272727;
 }
 
 .footer__inner ul li.active a {
     background-color: #d2d2d2;
     color: #272727;
+}
+
+.footer__inner .link {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+
+}
+
+.footer__inner .link a {
+    text-transform: uppercase;
+    font-family: "Work Sans";
+    font-weight: 300;
+    padding-right: 25px;
+    background-image: url(../sgv/arrow2.svg);
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-color: #272727;
 }

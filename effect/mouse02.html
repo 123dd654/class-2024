@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse Effect</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mouse.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
@@ -29,6 +29,46 @@
             font-weight: 900;
             margin-left: -10vw;
             letter-spacing: -1vw;
+        }
+
+        .main__inner .span1 {
+            color: #ff5252;
+        }
+
+        .main__inner .span2 {
+            color: #ff9a52;
+        }
+
+        .main__inner .span3 {
+            color: #ffba52;
+        }
+
+        .main__inner .span4 {
+            color: #baff52;
+        }
+
+        .main__inner .span5 {
+            color: #5266ff;
+        }
+
+        .main__inner .span6 {
+            color: #3d3a81;
+        }
+
+        .main__inner .span7 {
+            color: #cb52ff;
+        }
+
+        .main__inner .span8 {
+            color: #f652ff;
+        }
+
+        .main__inner .span9 {
+            color: #ff52ae;
+        }
+
+        .main__inner .span10 {
+            color: #ff52a0;
         }
 
         .main__info {
@@ -100,7 +140,7 @@
     <div id="wrap">
         <header id="header">
             <div class="header__inner">
-                <h1><a href="index.html">mouse Effect</a></h1>
+                <h1><a href="index.html">mouse Effect</a><em>02</em></h1>
             </div>
         </header>
         <!-- //header -->
@@ -108,7 +148,9 @@
         <main id="main">
             <div class="cursor"></div>
             <div class="main__inner">
-                <p>JavaScript</p>
+                <p>
+                    <span>J</span><span>a</span><span>v</span><span>a</span><span>S</span><span>c</span><span>r</span><span>i</span><span>p</span><span>t</span>
+                </p>
             </div>
             <div class="main__info">
                 <ul>
@@ -131,6 +173,11 @@
                         <li><a href="mouse04.html">04</a></li>
                     </ul>
                 </nav>
+                <div class="link">
+                    <ul>
+                        <li><a href="parallax01.html">parallax</a></li>
+                    </ul>
+                </div>
             </div>
         </footer>
         <!-- //footer -->
@@ -152,6 +199,19 @@
         document.addEventListener("mousemove", (e) => {
             gsap.to(".cursor", { duration: 0.6, left: e.clientX - 50, top: e.clientY - 50 })
         });
+
+        //
+        const span = document.querySelectorAll(".main__inner p span");
+
+        for (let i = 1; i <= span.length; i++) {
+            document.querySelector(`.main__inner p span:nth-child(${i})`).addEventListener("mouseover", function () {
+                document.querySelector(`.main__inner p span:nth-child(${i})`).classList.add(`span${i}`)
+            })
+
+            document.querySelector(`.main__inner p span:nth-child(${i})`).addEventListener("mouseout", function () {
+                document.querySelector(`.main__inner p span:nth-child(${i})`).classList.remove(`span${i}`)
+            })
+        }
 
 
     </script>
