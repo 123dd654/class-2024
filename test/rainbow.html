@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rainbow</title>
+    <style>
+        :root {
+            --color-background: #31037D;
+            --axis-x: 1px;
+            --axis-y: 1rem;
+            --delay: 10;
+            --color-black: #000;
+            --color-white: #fff;
+            --color-orange: #D49C3D;
+            --color-red: #D14B3D;
+            --color-violet: #CF52EB;
+            --color-blue: #44A3F7;
+            --color-green: #5ACB3C;
+            --color-yellow: #DEBF40;
+            --color-foreground: var(--color-white);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        html,
+        body {
+            font-size: 24px;
+        }
+
+        body {
+            background-color: var(--color-background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .c-rainbow {
+            position: relative;
+            display: block;
+        }
+
+        .c-rainbow__layer {
+            --text-color: var(--color-foreground);
+            font-size: 3rem;
+            color: var(--text-color);
+            text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black), 4px 4px 0 rgba(0, 0, 0, 0.2);
+            animation: rainbow 1.5s ease-in-out infinite
+        }
+
+        .c-rainbow__layer:not(:first-child) {
+            position: absolute;
+            top: 0;
+        }
+
+        .c-rainbow__layer--white {
+            --text-color: var(--color-white);
+        }
+
+        .c-rainbow__layer--orange {
+            --text-color: var(--color-orange);
+        }
+
+        .c-rainbow__layer--red {
+            --text-color: var(--color-red);
+        }
+
+        .c-rainbow__layer--violet {
+            --text-color: var(--color-violet);
+        }
+
+        .c-rainbow__layer--blue {
+            --text-color: var(--color-blue);
+        }
+
+        .c-rainbow__layer--green {
+            --text-color: var(--color-green);
+        }
+
+        .c-rainbow__layer--yellow {
+            --text-color: var(--color-yellow);
+        }
+
+        @keyframes rainbow {
+
+            0%,
+            100% {
+                transform:
+                    translatey(1rem)
+            }
+
+            50% {
+                transform:
+                    translatey(-1rem)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="c-rainbow">
+        <li class="c-rainbow__layer c-rainbow__layer--white">Devleop</li>
+        <li class="c-rainbow__layer c-rainbow__layer--orange">Devleop</li>
+        <li class="c-rainbow__layer c-rainbow__layer--red">Devleop</li>
+        <li class="c-rainbow__layer c-rainbow__layer--violet">Devleop</li>
+        <li class="c-rainbow__layer c-rainbow__layer--blue">Devleop</li>
+        <li class="c-rainbow__layer c-rainbow__layer--green">Devleop</li>
+        <li class="c-rainbow__layer c-rainbow__layer--yellow">Devleop</li>
+    </ul>
+
+    <script>
+        const rainbowList = document.querySelectorAll(".c-rainbow__layer");
+
+        for (let i = 1; i < rainbowList.length; i++) {
+            let animation = `calc(${i}/10 * 1s)`;
+            rainbowList[i].style.animationDelay = animation;
+
+            rainbowList[i].style.zIndex = -i * 10
+        }
+    </script>
+
+
+</body>
+
+</html>
