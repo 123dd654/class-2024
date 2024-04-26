@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo">
+                <span>역사 박물관</span>
+            </h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">박물관 소개</a>
+                        <ul>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">박물관연혁</a></li>
+                            <li><a href="#">유물현황</a></li>
+                            <li><a href="#">관람안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전시</a>
+                        <ul>
+                            <li><a href="#">선사시대</a></li>
+                            <li><a href="#">삼국시대</a></li>
+                            <li><a href="#">조선시대</a></li>
+                            <li><a href="#">근대시대</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">연구</a>
+                        <ul>
+                            <li><a href="#">생활유적</a></li>
+                            <li><a href="#">분묘유적</a></li>
+                            <li><a href="#">생산유적</a></li>
+                            <li><a href="#">통신유적</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">교육</a>
+                        <ul>
+                            <li><a href="#">문화행사</a></li>
+                            <li><a href="#">진로체험</a></li>
+                            <li><a href="#">외부교육</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section id="content">
+            <div class="content1"></div>
+            <div class="content2">
+                <div class="cont1">
+                    <img src="../siteE/images/cont01.jpg" alt="이미지1">
+                    <span>여러 관람 품목들</span>
+                </div>
+                <div class="cont2">
+                    <img src="../siteE/images/cont02.jpg" alt="이미지1">
+                    <span>여러 관람 품목들</span>
+                </div>
+            </div>
+            <div class="content3">
+                <div class="gellery">
+                    <img src="../siteE/images/gallery01.jpg" alt="이미지1">
+                    <span>그림1</span>
+                    <img src="../siteE/images/gallery02.jpg" alt="이미지1">
+                    <span>그림2</span>
+                    <img src="../siteE/images/gallery03.jpg" alt="이미지1">
+                    <span>그림3</span>
+                    <img src="../siteE/images/gallery04.jpg" alt="이미지1">
+                    <span>그림4</span>
+                </div>
+            </div>
+        </section>
+        <main id="main">
+            <div class="slider-wrap">
+                <div class="slider s1">
+                    <img src="../siteE/images/img01.jpg" alt="박물관1">
+                    <span>가나 박물관</span>
+                </div>
+                <div class="slider s2">
+                    <img src="../siteE/images/img02.jpg" alt="박물관1">
+                    <span>나나 박물관</span>
+                </div>
+                <div class="slider s3">
+                    <img src="../siteE/images/img03.jpg" alt="박물관1">
+                    <span>다나 박물관</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="footer">
+        <div class="footer1">
+            <h1 class="logo">
+                <span>역사 박물관</span>
+            </h1>
+        </div>
+        <div class="footer2">
+            <h2 class="copyright">
+                <a href="#">This work is protected by copyright owned by.</a>
+            </h2>
+        </div>
+        <div class="footer3">
+            <select>
+                <option value="#">가나 박물관</option>
+                <option value="#">나나 박물관</option>
+                <option value="#">다나 박물관</option>
+            </select>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(".nav>ul>li").mouseover(function () {
+            $(this).find(">ul").stop().slideDown();
+        });
+        $(".nav>ul>li").mouseout(function () {
+            $(this).find(">ul").stop().slideUp();
+        });
+
+        let currentIndex = 0;
+        $(".slider-wrap").append($(".slider").first().clone(true));
+
+        setInterval(() => {
+            currentIndex++;
+
+            $(".slider-wrap").animate({ marginTop: -740 * currentIndex + "px" }, 300)
+
+            if (currentIndex == 3) {
+                setTimeout(() => {
+                    $(".slider-wrap").animate({ marginTop: 0 }, 0);
+                    currentIndex = 0;
+                }, 300);
+            }
+        }, 3000)
+
+    </script>
+</body>
+
+</html>
