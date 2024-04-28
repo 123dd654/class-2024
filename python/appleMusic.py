@@ -8,9 +8,9 @@ res = req.get("https://music.apple.com/kr/playlist/%EC%98%A4%EB%8A%98%EC%9D%98-t
 
 soup = bs(res.text, "lxml")
 
-ranking = soup.select(".songs-list-row__rank")
-title = soup.select(".songs-list-row__song-name")
-artist = soup.select(".songs-list__song-link-wrapper")
+ranking = soup.select("main .songs-list-row__rank")
+title = soup.select("main .songs-list-row__song-name")
+artist = soup.select("main .songs-list__song-link-wrapper")
 
 rankingList = [r.text.strip() for r in ranking]
 titleList = [t.text.strip() for t in title]
