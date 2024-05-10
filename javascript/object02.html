@@ -60,7 +60,7 @@
                 <li><a href="sample16">16. <em>map()</em>💛💛💛 메서드는 주어진 함수를 호출하여 각 요소에 대한 결과를 모아 새로운 배열을 만듭니다.</a></li>
                 <li><a href="sample17">17. <em>some()</em> 메서드는 주어진 판별 함수를 하나라도 통과하는지 테스트하여, 그 결과를 불린(true, false)로
                         반환합니다.</a></li>
-                <li><a href="sample18">18. <em>includes()</em> 메서드는 배열 내에 특정 요소가 포함되어 있는지를 검색하여, 불린(true, false)을
+                <li><a href="sample18">18. <em>includes()</em>💛 메서드는 배열 내에 특정 요소가 포함되어 있는지를 검색하여, 불린(true, false)을
                         반환합니다.</a></li>
                 <li><a href="sample19">19. <em>indexOf()</em>💛 메서드는 배열을 검색하고, 주어진 값과 일치하는 첫 번째 인덱스를 반환합니다.</a></li>
                 <li><a href="sample20">20. <em>lastIndexOf()</em> 메서드는 배열을 역순으로 검색하여, 주어진 값과 일치하는 첫 번째 인덱스를 반환합니다.</a>
@@ -88,7 +88,10 @@
         <div class="main__sample container">
             <div id="sample01" class="sample">
                 <h3>01. find()</h3>
-                <p class="notice"></p>
+                <p class="notice">const foundElement = 배열.find(function(element, index, array) {
+
+                    return 조건; // 조건이 true일 때 현재 요소를 반환
+                    });</p>
                 <ul>
                     <li>
                         find 메서드는 주어진 조건을 만족하는 배열의 첫 번째 요소를 반환합니다. 조건을 만족하는 요소를 찾지 못하면 undefined를 반환합니다.
@@ -119,7 +122,7 @@
 
             <div id="sample02" class="sample">
                 <h3>02. forEach()</h3>
-                <p class="notice"></p>
+                <p class="notice">"배열.forEach(function(element, index, array) {});</p>
                 <ul>
                     <li>
                         forEach 메서드는 배열의 각 요소에 대해 한 번씩 제공된 함수를 실행합니다.
@@ -147,7 +150,8 @@
 
             <div id="sample03" class="sample">
                 <h3>03. filter()</h3>
-                <p class="notice"></p>
+                <p class="notice">const newArray = 배열.filter(function(element, index, array) {return 조건; // 조건이 true일 때
+                    요소를 새 배열에 포함});</p>
                 <ul>
                     <li>
                         filter 메서드는 주어진 함수로 구현된 조건을 만족하는 배열의 모든 요소를 포함하는 새로운 배열을 생성합니다.
@@ -177,7 +181,7 @@
 
             <div id="sample04" class="sample">
                 <h3>04. map()</h3>
-                <p class="notice"></p>
+                <p class="notice">const newArray = 배열.map(function(element, index, array){return 새로운 값;});</p>
                 <ul>
                     <li>
                         map 메서드는 주어진 함수를 사용하여 배열의 모든 요소에 대해 새로운 배열을 생성합니다.<br />
@@ -208,8 +212,41 @@
             <!-- //sample04 -->
 
             <div id="sample05" class="sample">
-                <h3>05. indexOf()</h3>
-                <p class="notice"></p>
+                <h3>05. includes()</h3>
+                <p class="notice">array.includes(element, start)</p>
+                <ul>
+                    <li>
+                        includes 메서드는 JavaScript에서 배열이 특정 요소를 포함하고 있는지 판별할 때 사용됩니다.<br />
+                        이 메서드는 배열에 지정된 요소가 있으면 true를, 없으면 false를 반환합니다.
+                    </li>
+                </ul>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'mango', 'orange'];
+    const hasMango = fruits.includes('mango');  // true
+    const hasCherry = fruits.includes('cherry');  // false
+    
+    console.log('Does the array include mango?', hasMango);  // Does the array include mango? true
+    console.log('Does the array include cherry?', hasCherry);  // Does the array include cherry? false         
+}</code></pre>
+                <p>fruits.includes('mango')는 배열에 'mango'가 포함되어 있으므로 true를 반환합니다.<br />
+                    fruits.includes('cherry')는 배열에 'cherry'가 없으므로 false를 반환합니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample05 -->
+
+            <div id="sample06" class="sample">
+                <h3>06. indexOf()</h3>
+                <p class="notice">array.indexOf(searchElement, fromIndex)</p>
                 <ul>
                     <li>
                         indexOf 메서드는 배열에서 지정된 요소를 찾아 첫 번째로 발견된 인덱스를 반환합니다.<br />
@@ -236,11 +273,44 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample05 -->
+            <!-- //sample06 -->
 
-            <div id="sample06" class="sample">
-                <h3>06. push()</h3>
-                <p class="notice"></p>
+            <div id="sample07" class="sample">
+                <h3>07. join()</h3>
+                <p class="notice">array.join(separator)</p>
+                <ul>
+                    <li>
+                        join 메서드는 JavaScript에서 배열의 모든 요소를 연결하여 하나의 문자열로 만들 때 사용됩니다.
+                        이 메서드는 배열의 각 요소 사이에 지정된 문자열을 삽입하여 최종 문자열을 생성합니다.
+                    </li>
+                </ul>
+                <pre class="javascript"><code>{
+    const words = ['Hello', 'world', 'this', 'is', 'JavaScript'];
+    const sentence = words.join(' ');  // "Hello world this is JavaScript"
+    const csvFormat = words.join(',');  // "Hello,world,this,is,JavaScript"
+    
+    console.log('Sentence:', sentence);  // Sentence: Hello world this is JavaScript
+    console.log('CSV format:', csvFormat);  // CSV format: Hello,world,this,is,JavaScript                    
+}</code></pre>
+                <p>words.join(' ')는 배열의 모든 요소를 공백(' ')을 사용하여 연결합니다. 이로 인해 문장처럼 읽히는 문자열이 생성됩니다.<br />
+                    words.join(',')는 배열의 모든 요소를 쉼표(',')로 연결하여 CSV 형식과 같은 문자열을 생성합니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample07 -->
+
+            <div id="sample08" class="sample">
+                <h3>08. push()</h3>
+                <p class="notice">array.push(element1, element2, ..., elementN)</p>
                 <ul>
                     <li>
                         indexOf 메서드는 배열에서 지정된 요소를 찾아 첫 번째로 발견된 인덱스를 반환합니다.<br />
@@ -267,11 +337,14 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample06 -->
+            <!-- //sample08 -->
 
-            <div id="sample07" class="sample">
-                <h3>07. reduce()</h3>
-                <p class="notice"></p>
+            <div id="sample09" class="sample">
+                <h3>09. reduce()</h3>
+                <p class="notice">array.reduce(function(accumulator, currentValue, currentIndex, array) {
+                    return newAccumulatorValue;
+                    }, initialValue);
+                </p>
                 <ul>
                     <li>
                         reduce 함수는 배열의 각 요소를 순회하며 하나의 값으로 줄여나가는 고차 함수입니다.
@@ -299,11 +372,11 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample07 -->
+            <!-- //sample09 -->
 
-            <div id="sample08" class="sample">
-                <h3>08. reduce()</h3>
-                <p class="notice"></p>
+            <div id="sample10" class="sample">
+                <h3>10. reverse()</h3>
+                <p class="notice">array.reverse()</p>
                 <ul>
                     <li>
                         reverse() 함수는 JavaScript에서 배열의 순서를 뒤집는 메서드입니다.<br />
@@ -330,11 +403,12 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample08 -->
+            <!-- //sample10 -->
 
-            <div id="sample09" class="sample">
-                <h3>09. slice()</h3>
-                <p class="notice"></p>
+            <div id="sample11" class="sample">
+                <h3>11. slice()</h3>
+                <p class="notice">array.slice(start, end)
+                </p>
                 <ul>
                     <li>
                         slice() 메서드는 배열의 일부분을 추출하여 새로운 배열을 반환합니다.<br />
@@ -362,11 +436,11 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample09 -->
+            <!-- //sample11 -->
 
-            <div id="sample11" class="sample">
-                <h3>11. splice()</h3>
-                <p class="notice"></p>
+            <div id="sample12" class="sample">
+                <h3>12. splice()</h3>
+                <p class="notice">array.splice(start, deleteCount, item1, item2, ..., itemN)</p>
                 <ul>
                     <li>
                         splice() 메서드는 배열의 내용을 추가하거나 제거하여 배열을 수정합니다. 이 메서드는 기존 배열을 변경합니다.<br />
@@ -398,11 +472,12 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample11 -->
+            <!-- //sample12 -->
 
-            <div id="sample12" class="sample">
-                <h3>12. sort()</h3>
-                <p class="notice"></p>
+            <div id="sample13" class="sample">
+                <h3>13. sort()</h3>
+                <p class="notice">array.sort(compareFunction)
+                </p>
                 <ul>
                     <li>
                         sort() 메서드는 배열의 요소를 적절한 순서로 정렬합니다.<br />
@@ -434,7 +509,7 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample12 -->
+            <!-- //sample13 -->
         </div>
         <!-- //main__sample container-->
     </main>

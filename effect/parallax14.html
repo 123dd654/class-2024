@@ -263,7 +263,7 @@
 
         <section id="section8" class="parallax__item">
             <span class="parallax__item__num">08</span>
-            <figure class="parallax__item__imgWrap">
+            <figure class="parallax__item__imgWrap img8">
                 <div class="parallax__item__img"></div>
             </figure>
         </section>
@@ -271,7 +271,7 @@
 
         <section id="section9" class="parallax__item">
             <span class="parallax__item__num">09</span>
-            <figure class="parallax__item__imgWrap">
+            <figure class="parallax__item__imgWrap img9">
                 <div class="parallax__item__img"></div>
             </figure>
         </section>
@@ -298,6 +298,25 @@
                 invalidateOnRefresh: true,
             }
         });
+
+        gsap.to(".img1", {
+            duration: 2,
+            x: 400,
+            rotation: 360,
+            borderRadius: 100
+        })
+
+        gsap.to(".img2", {
+            duration: 1,
+            rotation: 360,
+            borderRadius: 100,
+            yPercent: 300,
+            xPercent: -300,
+
+            scrollTrigger: {
+                trigger: ".img2"
+            }
+        })
 
         gsap.to(".img3", {
             y: 100,
@@ -358,9 +377,11 @@
         })
 
         gsap.to(".img7", {
-            y: 100,
-            duration: 2,
-            ease: "elastic",
+            autoAlpha: 0,
+            scale: 1,
+            width: "50vw",
+            height: "50vh",
+
             scrollTrigger: {
                 trigger: ".img7",
                 containerAnimation: scrollTween,
@@ -370,6 +391,44 @@
                 id: "img7"
             }
         })
+
+        gsap.to(".img8", {
+            autoAlpha: 0,
+            scale: 1.5,
+            rotation: 360,
+            rotation: -360,
+            x: 100,
+            duration: 3,
+            ease: "power2.inOut",
+
+            scrollTrigger: {
+                trigger: ".img8",
+                start: "top bottom",
+                end: () => "+=" + document.querySelector(".img8").offsetWidth,
+                scrub: true,
+                toggleActions: "restart pause reverse pause",
+                markers: true,
+                id: "img8"
+            }
+        });
+
+        gsap.to(".img9", {
+            autoAlpha: 0,
+            scale: 1,
+            width: "50vw",
+            height: "50vh",
+
+            scrollTrigger: {
+                trigger: ".img9",
+                start: "top bottom",
+                end: () => "+=" + document.querySelector(".img9").offsetWidth,
+                scrub: true,
+                toggleActions: "restart pause reverse pause",
+                markers: true,
+                id: "img9"
+            }
+        });
+
     </script>
 </body>
 

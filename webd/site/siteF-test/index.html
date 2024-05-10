@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="logo">
+                    <p>하이글로벌컴퍼니</p>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">회사소개</a>
+                            <ul>
+                                <li><a href="#">CEO 인사말</a></li>
+                                <li><a href="#">기업문화</a></li>
+                                <li><a href="#">경영방침</a></li>
+                                <li><a href="#">회사연혁</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">사업소개</a>
+                            <ul>
+                                <li><a href="#">반도체 설비운영</a></li>
+                                <li><a href="#">건축 공사</a></li>
+                                <li><a href="#">UHP 배관공사</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">회사활동</a>
+                            <ul>
+                                <li><a href="#">윤리경영</a></li>
+                                <li><a href="#">환경경영</a></li>
+                                <li><a href="#">안전보건경영</a></li>
+                                <li><a href="#">품질경영</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">인재채용</a>
+                            <ul>
+                                <li><a href="#">인재채용</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section id="slider">
+            <div class="sliderWrap">
+                <div class="slider s1">
+                    <img src="../siteF-test/images/sliderimg1.jpg" alt="">
+                </div>
+                <div class="slider s2">
+                    <img src="../siteF-test/images/sliderimg2.jpg" alt="">
+                </div>
+                <div class="slider s3">
+                    <img src="../siteF-test/images/sliderimg3.jpg" alt="">
+                </div>
+            </div>
+            <div class="link">
+                <div>
+                    <img src="../siteF-test/images/linkimg1.jpg " alt="이미지1">
+                    <img src="../siteF-test/images/linkimg2.jpg " alt="이미지2">
+                    <img src="../siteF-test/images/linkimg3.jpg " alt="이미지3">
+                    <img src="../siteF-test/images/linkimg4.jpg " alt="이미지4">
+                    <img src="../siteF-test/images/linkimg5.jpg " alt="이미지5">
+                </div>
+            </div>
+        </section>
+        <article id="contents">
+            <div class="container">
+                <div class="banner">
+                    <div>
+                        <img src="../siteF-test/images/conimg.jpg" alt="이미지1">
+                    </div>
+                    <div class="icon">
+                        <img src="../siteF-test/images/icon.png" alt="아이콘">
+                    </div>
+                </div>
+                <div class="notice">
+                    <div class="notice2">
+                        <ul>
+                            <li>공지사항</li>
+                            <ul>
+                                <li>공지사항 1번입니다 2025.05.10</li>
+                                <li>공지사항 2번입니다 2025.05.10</li>
+                                <li>공지사항 3번입니다 2025.05.10</li>
+                                <li>공지사항 4번입니다 2025.05.10</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="gallery">
+                        <ul>
+                            <li>갤러리</li>
+                            <img src="../siteF-test/images/gallery01.jpg" alt="이미지1">
+                            <img src="../siteF-test/images/gallery02.jpg" alt="이미지2">
+                            <img src="../siteF-test/images/gallery03.jpg" alt="이미지3">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer id="fooer">
+            <div class="container">
+                <div class="footer1">
+                    <p>하이글로벌컴퍼니</p>
+                </div>
+                <div class="footer2">
+                    <p>Copyright 2024. 하이글로벌컴퍼니 inc. all rights reserved.</p>
+                </div>
+                <div class="footer3">
+                    <select name="family" id="family">
+                        <option value="#">하이글로벌유통</option>
+                        <option value="#">하이글로벌식품</option>
+                        <option value="#">하이글로벌건설</option>
+                    </select>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let currentIndex = 0;
+        $(".sliderWrap").append($(".slider").first().clone(true));
+
+        setInterval(() => {
+            currentIndex++;
+
+            $(".sliderWrap").animate({ marginLeft: -100 * currentIndex + "%" }, 600)
+
+            if (currentIndex == 3) {
+                setTimeout(() => {
+                    $(".sliderWrap").animate({ marginLeft: 0 }, 0);
+                    currentIndex = 0;
+                }, 700);
+            }
+        }, 3000)
+
+        $(".nav>ul>li").mouseover(function () {
+            $(".nav>ul>li>ul").stop().fadeIn(500);
+        });
+
+        $(".nav>ul>li").mouseout(function () {
+            $(".nav>ul>li>ul").stop().fadeOut(500);
+        });
+    </script>
+</body>
+
+</html>
