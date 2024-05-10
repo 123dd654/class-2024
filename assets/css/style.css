@@ -135,6 +135,10 @@ body {
         cursor: pointer;
         text-align: center;
 
+        a {
+            text-decoration: none;
+        }
+
         img {
             width: 60px;
             /* border-radius: 50%; */
@@ -147,7 +151,7 @@ body {
             margin-top: 8px;
             color: #717171;
             font-size: 14px;
-            box-shadow: none;
+            text-decoration: none;
         }
     }
 }
